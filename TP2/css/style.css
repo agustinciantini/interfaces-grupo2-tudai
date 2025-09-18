@@ -1,0 +1,52 @@
+/* ============================================
+   Paleta de Colores/Tipografia - Variables CSS
+=============================================== */
+
+:root{
+    /* colores */
+    --primary-100: #574fdd;
+    --primary-200: #4940E3;
+    --primary-300: #3A30E5;
+    --primary-400: #1004D7;
+    --primary-500: #1717AF;
+    --primary-600: #060672;
+    --primary-700: #010132;
+
+    --secundary-200: #D6DAE0;
+    --secundary-300: #B0C4DE;
+    --secundary-400: #82ADE6;
+    --secundary-500: #5E98E4;
+    --secundary-600: #307EE5;
+    --secundary-700: #035ED5;
+
+    --accent-100: #f5d7b7;
+    --accent-200: #FFCF9A;
+    --accent-300: #FFBF78;
+    --accent-400: #FFB35F;
+    --accent-500: #FFA744;
+    --accent-600: #FF9723;
+    --accent-700: #FB8501;
+
+    --grey-200: #ECECEC;
+    --grey-300: #C3C3C3;
+    --grey-400: #A4A2A2;
+    --grey-500: #808080;
+    --grey-600: #515151;
+    --grey-700: #363636;
+
+    --light-purple: #BBB6FF;
+    --red: #CA4B46;
+
+    /* fuente */
+    --font-base: "Jaldi", sans-serif;
+
+    /* tamaños fuente */
+    --font-size-huge: 36px;
+    --font-size-extra-large: 30px;
+    --font-size-large: 20px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+    --font-size-tiny: 14px;
+    --font-size-micro: 12px;
+}
+
