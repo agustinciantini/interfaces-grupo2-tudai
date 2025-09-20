@@ -7,6 +7,7 @@
 //         .then(response => response.text())
 //         .then(texto => {
 //             document.querySelector("#container").innerHTML = texto;
-//             metodo_a_ejecutar(); 
 //         })
 // }
+
+ 
