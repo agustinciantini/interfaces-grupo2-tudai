@@ -1,37 +1,57 @@
-<!-- <body> -->
 <head>
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/gameplay.css"> 
 </head>
-    <div class="game-container-playing">
 
-        <!-- <aside class="sidebar">
-            barra de hamburguesa lateral 
-        </aside> -->
+<div class="game-container-playing">
 
-        <section class="game-running">
-            <!-- juego ejecutandose -->
+    <article class="gameplay-container">
+
+        <section class="game-running">  <!-- juego ejecutandose -->
+            <div class="game-preview">
+                <img src="images/Peg Solitaire - tematica minecraft .png" alt="">
+                <button class="button-game-running">
+                    <img src="images/play.png" alt="">
+                    <p class="typography-description">Jugar</p>
+                </button>
+            </div>
+
+            <div class="game-bar-container-running">
+                <div class="title-bar-game">
+                    <p class="title-typography-gameplay name-game">Peg Solitaire</p>
+                    <p class="typography-description number-of-views">+5K personas han jugado este juego.</p>
+                </div>
+
+                <div class="interactions">
+                    <img src="images/me gusta.png" alt="">
+                    <img src="images/no me gusta.png" alt="">
+                    <img src="images/favoritos.png" alt="">
+                    <img src="images/controles.png" alt="">
+                    <img src="images/compartir.png" alt="">
+                    <img src="images/pantalla completa.png" alt="">
+                </div>
+            </div>
         </section>
 
-        <section class="game-infomation-container"> 
-            <div class="game-title">
+        <section class="game-infomation-container">     <!-- informacion del juego -->
+            <div class="game-title title">
                 <p class="title-typography-gameplay">Peg Solitaire - Steve vs Zombie</p>
             </div>
 
             <div class="container-categories-game">
-                <div class="title-categories title">
+                <div class="title">
                     🏷️
                     <p class="title-typography-gameplay">CATEGORIAS</p>
                 </div>
                 <div class="game-categories">
-                    <div id="categories"></div> <!--se llena desde js (VERRRRRRRRRRRRRRRRRRRRRR)-->
+                    <div id="categories"></div> <!--se llena desde js-->
                 </div>
             </div>
 
             <div class="game-information">
                 <div class="descrption-game">
                     <div class="title-description title">
-                        ❕
+                        <img src="images/exclamacion.png" alt="">
                         <p class="title-typography-gameplay">Descripción del Juego</p>    
                     </div>
                     <div class="divider"></div> 
@@ -43,7 +63,7 @@
 
                 <div class="how-to-play-container">
                     <div class="how-to-play">
-                        <div class="game-description title">
+                        <div class="title">
                             🎮
                             <p class="title-typography-gameplay">¿Cómo Jugar?</p>
                         </div>
@@ -56,27 +76,25 @@
 
                 <div class="rules-of-the-game">
                     <div class="title-rules-container">
-                        <div class="title-rules title">
+                        <div class="title">
                             📖
                             <p class="title-typography-gameplay">Reglas del juego:</p>
                         </div>
                         <div class="divider"></div> 
                     </div>
 
-                    <!-- <div class="description"> -->
-                        <ul class="typography-description">
-                            <li>Saltar una esmeralda sobre una esmeralda adyacente (ortogonalmente, sin diagonales), hacia un espacio vacío inmediatamente después.</li>
-                            <li>La esmeralda saltada se retira del tablero.</li>
-                            <li>No se permiten saltos en diagonal, debes saltar en línea recta (arriba, abajo, izquierda, derecha).</li>
-                            <li>El juego termina cuando solo queda 1 esmeralda (¡ganas!) o no quedan más movimientos válidos (¡pierdes!).</li>
-                        </ul>
-                    <!-- </div> -->
+                    <ul class="typography-description">
+                        <li>Saltar una esmeralda sobre una esmeralda adyacente (ortogonalmente, sin diagonales), hacia un espacio vacío inmediatamente después.</li>
+                        <li>La esmeralda saltada se retira del tablero.</li>
+                        <li>No se permiten saltos en diagonal, debes saltar en línea recta (arriba, abajo, izquierda, derecha).</li>
+                        <li>El juego termina cuando solo queda 1 esmeralda (¡ganas!) o no quedan más movimientos válidos (¡pierdes!).</li>
+                    </ul>
                     
                 </div>
 
                 <div class="controls">
                     <div class="title-controls-container">
-                        <div class="title-controls title">
+                        <div class="title">
                             ⌨️
                             <p class="title-typography-gameplay">Controles:</p>
                         </div>
@@ -92,7 +110,7 @@
 
                 <div class="gameplay-information">
                     <div class="title-gameplay-container">
-                        <div class="title-gameplay title">
+                        <div class="title">
                             🖼️
                             <p class="title-typography-gameplay">Jugabilidad:</p>
                         </div>
@@ -111,23 +129,28 @@
 
         </section>
 
-        <section class="comments">
-            <!-- seccion de comentarios -->
+        <section class="comments">  <!-- Seccion de comentarios -->
+            
             <article class="comment">
 
             </article>
+            
         </section>
+    </article>
 
-        <aside class="tweets">
-            <!-- seccion de tweets -->
+    <article class="additional-container">  <!-- Juegos adicionales -->
+        <aside class="recommended-games">
+            
+        </aside>
+
+        <aside class="tweets">      <!-- Seccion de tweets -->
             <article class="tweet">
 
             </article>
         </aside>
+    </article>
+    
+</div>
 
-        
-    </div>
 
-
-    <script src="components/game-category/game-category.js"></script>
-<!-- </body> -->
+<script src="components/game-category/game-category.js"></script>
