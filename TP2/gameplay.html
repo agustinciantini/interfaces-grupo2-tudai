@@ -7,13 +7,25 @@
 
     <article class="gameplay-container">
 
-        <section class="game-running">  <!-- juego ejecutandose -->
-            <div class="game-preview">
+        <section class="game-running">  <!-- juego -->
+            <div id="game-preview">     <!-- vista previa del juego -->
                 <img src="images/Peg Solitaire - tematica minecraft .png" alt="">
                 <button class="button-game-running">
                     <img src="images/play.png" alt="">
                     <p class="typography-description">Jugar</p>
                 </button>
+            </div>
+
+            <div id="game-playing">   <!-- juego en ejecucion -->
+                <img src="images/inicio juego.png" alt="">
+                <div class="game-running-options">
+                    <p id="timer">0:00</p>
+                    <button id="exit-game"> <img src="images/salir.png" alt=""> </button>
+                    <button id="game-configuration"> <img src="images/configuracion.png" alt=""> </button>
+                    <button id="game-clue"> <img src="images/pista.png" alt=""> </button>
+                    <button id="game-help"> <img src="images/ayuda.png" alt=""> </button>
+                </div>
+                
             </div>
 
             <div class="game-bar-container-running">
@@ -23,13 +35,14 @@
                 </div>
 
                 <div class="interactions">
-                    <img src="images/me gusta.png" alt="">
-                    <img src="images/no me gusta.png" alt="">
-                    <img src="images/favoritos.png" alt="">
-                    <img src="images/controles.png" alt="">
-                    <img src="images/compartir.png" alt="">
-                    <img src="images/pantalla completa.png" alt="">
+                    <button id="likeBtn"> <img src="images/me gusta.png" alt="Me gusta"> </button>
+                    <button id="dislikeBtn"> <img src="images/no me gusta.png" alt="No me gusta"> </button>
+                    <button id="favBtn"> <img src="images/favoritos.png" alt="Favoritos"> </button>
+                    <button id="controlsBtn"> <img src="images/controles.png" alt="Controles"> </button>
+                    <button id="shareBtn"> <img src="images/compartir.png" alt="Compartir"> </button>
+                    <button id="fullscreenBtn"> <img src="images/pantalla completa.png" alt="Pantalla completa"> </button>
                 </div>
+
             </div>
         </section>
 
@@ -152,5 +165,5 @@
     
 </div>
 
-
+<script src="js/gameplay.js"></script>
 <script src="components/game-category/game-category.js"></script>
