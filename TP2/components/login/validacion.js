@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         element.previousElementSibling.classList.remove('has-error');
     }
 
-    // Funciones de validación individuales
     function validateUsuario() {
         const usuarioInput = document.getElementById('usuario');
         const usuarioError = document.getElementById('usuario-error');
@@ -78,18 +77,15 @@ function validateRepetirContrasena() {
     const repetirContrasenaError = document.getElementById('repetir-contrasena-error');
     const contrasenaInput = document.getElementById('contrasena');
     
-    // Si los valores no coinciden, muestra el error
     if (repetirContrasenaInput.value !== contrasenaInput.value) {
         showError(repetirContrasenaError, 'Las contraseñas no coinciden.');
         return false;
     } else {
-        // Si los valores sí coinciden, oculta el error
         hideError(repetirContrasenaError);
         return true;
     }
 }
 
-    // Validar en tiempo real (al salir de un campo)
     inputs.forEach(inputInfo => {
         const inputElement = document.getElementById(inputInfo.id);
         if (inputElement) {
@@ -99,9 +95,8 @@ function validateRepetirContrasena() {
         }
     });
 
-    // Escuchar el evento de envío del formulario
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Siempre prevenir el envío por defecto para la validación
+        event.preventDefault();
 
         let formIsValid = true;
         inputs.forEach(inputInfo => {
@@ -118,7 +113,6 @@ function validateRepetirContrasena() {
 
         if (formIsValid) {
             alert('¡Formulario enviado con éxito!');
-            // Aquí puedes enviar el formulario a un servidor con AJAX o redirigir
         }
     });
 });

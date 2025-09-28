@@ -4,32 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./components/header/header.css">
+    <link rel="stylesheet" href="./components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="./components/footer/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./images/logo-gamix.png"> 
+
 
     <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
-    <title>Gamix</title>
+    <title>Gamix - La mejor plataforma de juegos online.</title>
 </head>
 <body>
     
-    <header>
+<!-- HEADER COMPLETO CON SU SECCIÓN DE PERFIL -->
 
-    </header>
+  <header class="header">
+    <div class="header-left">
+      <button class="header-menu-btn" aria-label="Abrir menú de navegación">
+        <span class="header-menu-icon">&#9776;</span>
+      </button>
 
-    <main id="main-container">
-        <aside class="sidebar">
-            <!-- barra de hamburguesa lateral -->
-        </aside>
+      <a href="#" class="header-logo">
+        <img src="/TP2/images/logo-gamix.png" alt="Logo de Gamix" class="header-logo-img">
+        <span class="header-logo-text">Gamix</span>
+      </a>
+    </div>
 
+    <form class="header-search" role="search">
+      <label for="search-input" class="visually-hidden">Buscar juegos</label>
+      <input id="search-input" type="search" placeholder="¿A qué jugamos hoy?">
+      <button type="submit" aria-label="Buscar">&#128269;</button>
+    </form>
+
+    <div class="header-right">
+      <a href="#" class="header-icon-link" aria-label="Mis favoritos">
+        <span class="header-icon">&#9829;</span>
+      </a>
+
+      <div class="header-user">
+        <img src="/TP2/images/user-logo.png" alt="Avatar del usuario" class="header-user-avatar">
+        <span class="header-user-status"></span>
+      </div>
+    </div>
+  </header>
+
+<!-- SECCIÓN PERFIL DEL HEADER -->
+
+  <div class="profile-card">
+    <div class="profile-info">
+      <div class="avatar-container">
+        <img src="/TP2/images/user-logo.png" alt="Avatar del usuario" class="profile-avatar">
+      </div>
+      <h2 class="username">@Usuario</h2>
+      <p class="email">usuario@gmail.com</p>
+    </div>
+
+    <div class="actions">
+      <button class="profile-btn">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </button>
+      <button class="edit-btn">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+    </div>
+
+    <div class="footer-profile">
+      <button class="footer-btn">
+        <i class="fa-solid fa-gear"></i>
+        <span>Configuración</span>
+      </button>
+      <button class="footer-btn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Cerrar Sesión</span>
+      </button>
+    </div>
+  </div>
+
+<!-- SIDEBAR DESPLEGABLE CON SUS CATEGORÍAS -->
+
+<aside class="sidebar">
+    <h3 class="sidebar-title">Menu</h3>
+    <ul class="sidebar-list">
+      <li class="sidebar-list-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+      </li>
+      <li class="sidebar-list-item">
+        <i class="fa-solid fa-star"></i>
+        <span>Nuevos</span>
+        </li>
+      <li class="sidebar-list-item">
+        <i class="fa-solid fa-fire"></i>
+        <span>Populares</span>
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h3 class="sidebar-title">Categorías</h3>
+    <ul class="sidebar-list" id="categories"> 
+    </ul>
+</aside>
+
+<main>
         <div id="container">
             <!-- switch entre las 3 paginas del sitio -->
         </div>
+</main>    
+    
+ <footer>
+        <div class="footer-content">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <img src="/TP2/images/logo-gamix.png" alt="Logo de Gamix" class="logo">
+                    <h1 class="title">Gamix</h1>
+                </div>
+                <p>La mejor plataforma de juegos online. Descubre, juega y comparte tus experiencias con una comunidad
+                    global de gamers.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                </div>
+            </div>
 
-    </main>
+            <div class="footer-section links-section">
+                <nav>
+                    <h4>Contribuir</h4>
+                    <ul>
+                        <li><a href="#">Editoriales de juegos</a></li>
+                        <li><a href="#">Soy un desarrollador de software</a></li>
+                        <li><a href="#">Notificar un error</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-    <footer>
+            <div class="footer-section links-section">
+                <nav>
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Foro</a></li>
+                    </ul>
+                </nav>
+            </div>
 
+            <div class="footer-section links-section">
+                <nav>
+                    <h4>Acerca de nosotros</h4>
+                    <ul>
+                        <li><a href="#">¿Quiénes somos?</a></li>
+                        <li><a href="#">¿Los juegos son completamente gratis?</a></li>
+                        <li><a href="#">¿Necesito crear una cuenta para jugar?</a></li>
+                        <li><a href="#">¿Puedo jugar desde el celular o tablet?</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="scroll-to-top">
+                <a href="#top"><i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <div class="footer-bottom">
+        <p>© 2025 GAMIX - TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+    
     <script src="js/index.js"></script>
+<<<<<<< Updated upstream
+=======
+    <script src="./components/header/header.js"></script>
+    <script src="./components/sidebar/sidebar.js"></script>
+    <script src="./components/sidebar/sidebar-category.js"></script>
+    
+>>>>>>> Stashed changes
 </body>
 </html>

@@ -31,6 +31,9 @@ body {
 .title {
   font-size: 2em;
   font-weight: 600;
+  background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%,#66797B 50%,#C0392B 80%,#E74C3C 100%);
+  background-clip: text;
+  color: transparent;
 }
 
 .form-group { margin-bottom: 5px; }
