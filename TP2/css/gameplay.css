@@ -46,6 +46,7 @@
 .game-container-playing{
     display: flex;
     gap: 33px;
+    padding: 24px;
 }
 
 /* ---------------------------------------------- Juego en ejecucion --------------------------------------------- */
@@ -321,19 +322,7 @@ button.active {
 
 #categories{
     display: flex;
-}
-
-.game-category{     
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    height: fit-content;
-    gap: 10px;
-    padding: 3px 16px;
-    background-color: var(--primary-700);
-    color: var(--secondary-200);
-    border-radius: 9px;
+    gap: 15px;
 }
 
 .game-information{      
@@ -510,10 +499,67 @@ button.active {
 }
 
 /* ------------------------------------------- Comentarios --------------------------------------------- */
-.comments{
-    border: 2px solid black;
+
+.comments-seccion {
+    display: flex;
+    flex-direction: column;
+
     width: 928px;
-    height: 300px;
+    height: fit-content;
+    gap: 10px;
+    padding: 0px;
+}
+
+.comment-post-container {
+    width: 100%;
+    height: fit-content;
+    padding: 8px 0px;
+    border-radius: 10px;
+    background-color: var(--primary-600);
+
+    /* overflow: hidden;    */
+}
+
+.comment-post {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.active-session-logo {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+}
+
+.input-opinion {
+    width: 100%;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: var(--secondary-200);
+}
+
+.post-button {
+    width: 10%;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: var(--accent-700);
+    font-size: var(--font-size-small);
+    cursor: pointer;
+}
+
+#comments-others {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 

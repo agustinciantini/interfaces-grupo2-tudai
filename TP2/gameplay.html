@@ -1,6 +1,8 @@
 <head>
     <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="css/gameplay.css"> 
+    <link rel="stylesheet" href="css/gameplay.css">
+    <link rel="stylesheet" href="components/game-category/game-category.css">
+    <link rel="stylesheet" href="components/game-comment/game-camment.css"> 
 </head>
 
 <div class="game-container-playing">
@@ -35,7 +37,7 @@
                 </div>
 
                 <div class="interactions">
-                    <button id="likeBtn"> <img src="images/me gusta.png" alt="Me gusta"> </button>
+                    <button class="likeBtn"> <img src="images/me gusta.png" alt="Me gusta"> </button>
                     <button id="dislikeBtn"> <img src="images/no me gusta.png" alt="No me gusta"> </button>
                     <button id="favBtn"> <img src="images/favoritos.png" alt="Favoritos"> </button>
                     <button id="controlsBtn"> <img src="images/controles.png" alt="Controles"> </button>
@@ -142,11 +144,29 @@
 
         </section>
 
-        <section class="comments">  <!-- Seccion de comentarios -->
+        <section class="comments-seccion">  <!-- Seccion de comentarios -->
             
-            <article class="comment">
+            <div class="title-gameplay-container">
+                <div class="title">
+                    💬
+                    <p class="title-typography-gameplay">Comentarios:</p>
+                </div>
+                <div class="divider"></div>
+            </div>
 
+            <article class="comment-post-container">
+                <div class="comment-post">
+                    <img class="active-session-logo" src="images/sesion activa.png" alt="">
+                    <input class="input-opinion" type="text" placeholder="¿Qué opinas sobre este juego?">
+                    <button class="post-button title-typography-gameplay">Postear</button>
+                </div>
             </article>
+
+            
+            <div id="comments-others">
+                <!-- se llena desde js -->
+            </div>
+
             
         </section>
     </article>
@@ -167,3 +187,4 @@
 
 <script src="js/gameplay.js"></script>
 <script src="components/game-category/game-category.js"></script>
+<script src="components/game-comment/game-comment.js"></script>

@@ -48,5 +48,7 @@
     --font-size-small: 16px;
     --font-size-tiny: 14px;
     --font-size-micro: 12px;
+
+    background-color: var(--primary-700);
 }
 

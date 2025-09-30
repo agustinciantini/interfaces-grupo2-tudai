@@ -15,7 +15,7 @@ exitGameBtn.addEventListener("click", () => {
 //--------------------------------- Interacciones relacionadas al juego ------------------------------ 
 
 // Like or Dislike
-const likeBtn = document.getElementById("likeBtn");
+const likeBtn = document.querySelector(".likeBtn");
 const dislikeBtn = document.getElementById("dislikeBtn");
 
 likeBtn.addEventListener("click", () => {
@@ -55,7 +55,6 @@ shareBtn.addEventListener("click", async () => {
             try {
             await navigator.share({
                 title: "Mira este contenido",
-                // text: "¡Está buenísimo!",
                 url: window.location.href
             });
             } catch (err) {

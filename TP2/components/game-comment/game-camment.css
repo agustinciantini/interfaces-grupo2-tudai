@@ -1,0 +1,116 @@
+
+.comment {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: fit-content;
+    padding: 0px 10px;
+    border-radius: 10px;
+    background-color: var(--primary-600);
+    box-sizing: border-box;
+}
+
+.information-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: fit-content;
+    padding: 5px 0px;
+}
+
+.user-information {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+    gap: 6px;
+    padding: 0px;
+}
+
+.user-information img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 20px;
+}
+
+.name-and-day {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+}
+
+.name-user {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--font-size-small);
+}
+
+.publication-day {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--font-size-micro);
+    color: var(--grey-300);
+}
+
+.like-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+    gap: 5px;
+    padding: 0px;
+}
+
+.like-count {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    font-size: var(--font-size-tiny);
+}
+
+/* .number-of-likes {
+    display: block;
+} */
+
+.post-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    height: fit-content;
+    padding: 5px 0px;
+    gap: 10px;
+}
+
+.post-description p {
+    background: none;
+    font-size: var(--font-size-small);
+
+    /* width: 100%;
+    height: fit-content; */
+    word-break: break-word;    /* corta palabras largas */
+}
+
+.post-description button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.post-description img {
+    width: 25px;
+    height: 18px;
+    object-fit: contain;
+}
