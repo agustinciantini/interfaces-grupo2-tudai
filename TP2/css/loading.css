@@ -1,0 +1,73 @@
+.body-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: var(--primary-700);
+    font-family: var(--font-base);
+    gap: 20px;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    /* margin: 10px; */
+    position: relative;
+}
+
+.loader:before, .loader:after {     /*circulos concentricos*/
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(var(--secondary-200), 0.75));
+}
+
+.loader:before {    
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-300);
+    animation-delay: 0.5s;
+}
+
+.loader:after {
+    width: 75%;
+    height: 75%;
+    background-color: var(--primary-100);
+    top: 12.5%;
+    left: 12.5%;
+}
+
+
+@keyframes pulsOut {
+    0%, 100%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+
+.loading-text {
+    color: var(--secondary-200);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--grey-700);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--secondary-700);
+    width: 0%;
+    transition: width 0.5% ease;
+}
+
