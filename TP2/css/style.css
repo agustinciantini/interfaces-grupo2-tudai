@@ -27,12 +27,14 @@
     --accent-600: #FF9723;
     --accent-700: #FB8501;
 
+    --grey-100: #ffffff;
     --grey-200: #ECECEC;
     --grey-300: #C3C3C3;
     --grey-400: #A4A2A2;
     --grey-500: #808080;
     --grey-600: #515151;
     --grey-700: #363636;
+    --grey-800: #1d1d1d;
 
     --light-purple: #BBB6FF;
     --red: #CA4B46;
@@ -52,3 +54,9 @@
     background-color: var(--primary-700);
 }
 
+.logo-name {
+    font-size: var(--font-size-large);
+    background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%,#66797B 50%,#C0392B 80%,#E74C3C 100%);
+    background-clip: text;
+    color: transparent;
+}

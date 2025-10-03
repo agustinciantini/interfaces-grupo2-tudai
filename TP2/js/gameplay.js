@@ -65,41 +65,6 @@ shareBtn.addEventListener("click", async () => {
         }
     });
 
-// Pantalla completa
-// const fullscreenBtn = document.getElementById("fullscreenBtn");
-// const gameContainer = document.getElementById("game-preview");
-
-// fullscreenBtn.addEventListener("click", () => {
-//         if (!document.fullscreenElement) {
-//             gameContainer.requestFullscreen();
-//         } else {
-//             document.exitFullscreen();
-//         }
-//     });
-
-
-
-// Pantalla completa dinámica
-// const fullscreenBtn = document.getElementById("fullscreenBtn");
-
-// fullscreenBtn.addEventListener("click", () => {
-//     const preview = document.getElementById("game-preview");
-//     const playing = document.getElementById("game-playing");
-
-//     if (!document.fullscreenElement) {
-//         if(window.getComputedStyle(preview).display !== "none"){
-//             preview.requestFullscreen();
-//         }else{
-//             if(window.getComputedStyle(playing).display !== "none"){
-//                 playing.requestFullscreen();
-//             }
-//         }
-//     } else {
-//         document.exitFullscreen();
-//     }
-// });
-
-
 
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 const gameSection = document.querySelector(".game-running");

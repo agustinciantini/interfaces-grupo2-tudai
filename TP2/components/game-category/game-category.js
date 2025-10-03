@@ -23,14 +23,14 @@ const categorias = [
 
 
 // Referencias al DOM:
-const contenedor = document.getElementById("categories");
+const categoriesContainer = document.getElementById("categories");
 
 
 // Traigo el template desde game-category.html:
 fetch("components/game-category/game-category.html")
     .then(res => res.text())
     .then(html => {
-        document.querySelector("#categories").innerHTML = html;
+        document.getElementById("categories").innerHTML = html;
 
         const template = document.getElementById("game-category-template");
 
@@ -39,7 +39,7 @@ fetch("components/game-category/game-category.html")
                 let clone = template.content.cloneNode(true);
                 clone.querySelector(".icon").textContent = cat.icon;
                 clone.querySelector(".index-user").textContent = cat.name;
-                contenedor.appendChild(clone);
+                categoriesContainer.appendChild(clone);
             }
         });
     });

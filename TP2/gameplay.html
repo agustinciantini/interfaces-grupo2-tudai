@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="css/gameplay.css">
     <link rel="stylesheet" href="components/game-category/game-category.css">
     <link rel="stylesheet" href="components/game-comment/game-camment.css"> 
+    <link rel="stylesheet" href="components/tweet/tweet.css">
 </head>
 
 <div class="game-container-playing">
@@ -176,10 +177,17 @@
             
         </aside>
 
-        <aside class="tweets">      <!-- Seccion de tweets -->
-            <article class="tweet">
+        <aside class="latest-news-container">      <!-- Seccion de tweets -->
+            <div class="latest-news">
+                <div class="title">
+                    📢
+                    <p class="title-typography-gameplay">Ultimas Novedades:</p>
+                </div>
+                <div class="divider"></div>
+            </div>
 
-            </article>
+            <div id="tweets-container"></div>  <!-- se llena desde js -->
+
         </aside>
     </article>
     
@@ -188,3 +196,4 @@
 <script src="js/gameplay.js"></script>
 <script src="components/game-category/game-category.js"></script>
 <script src="components/game-comment/game-comment.js"></script>
+<script src="components/tweet/tweet.js"></script>
