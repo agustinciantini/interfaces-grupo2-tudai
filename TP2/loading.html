@@ -1,22 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading GAMIX</title>
     <link rel="stylesheet" href="css/loading.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
 </head>
+
 <body>
-    
-    <div class="body-loading">
-        <div class="loader"></div>
-        <p class="loading-text"></p>
-        <div class="progress-bar">
-            <div class="progress"></div>
+    <div class="loader" id="loader">
+        <!-- Partículas de imágenes de juegos  -->
+        <div class="particle particle-1">
+            <img src="images/accion/Cat and Granny.jpg" alt="World Z Defense">
+        </div>
+        <div class="particle particle-2">
+            <img src="images/accion/Fortzone Battle Royale.jpg" alt="">
+        </div>
+        <div class="particle particle-3">
+            <img src="images/accion/Madness Project Nexus.png" alt="">
+        </div>
+        <div class="particle particle-4">
+            <img src="images/accion/ninja-parkour-io-356x200.jpg" alt="">
+        </div>
+        <div class="particle particle-5">
+            <img src="images/accion/Sandbox City.jpg" alt="">
+        </div>
+        <div class="particle particle-6">
+            <img src="images/accion/Stick Ragdoll Battle Simulator.png" alt="">
+        </div>
+        <div class="particle particle-7">
+            <img src="images/accion/Stickman History Battle.png" alt="">
+        </div>
+        <div class="particle particle-8">
+            <img src="images/accion/stickman-project-bnw_1x1-cover.png" alt="">
+        </div>
+        <div class="particle particle-9">
+            <img src="images/accion/World Z Defense - Zombie Defense.jpg" alt="">
+        </div>
+        <div class="particle particle-10">
+            <img src="images/autos/Demolition Derby 2.jpg" alt="">
+        </div>
+
+        <!-- Logo del joystick  -->
+        <div class="logo-container" id="logoContainer">
+            <img class="logo" src="images/logo simple.png" alt="Gaming Logo" >
+        </div>
+
+        <!-- Nombre de la pagina  -->
+        <div class="logo-name-loading" id="logo-name-loading">GAMIX</div>
+
+        <!-- Porcentaje de carga  -->
+        <div class="loading-text" id="loadingText">0%</div>
+
+        <!-- Barra de progreso  -->
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
         </div>
     </div>
 
     <script src="js/loading.js"></script>
 </body>
-</html>
