@@ -6,7 +6,6 @@ const tweets = [
             '<span class="hashtag">#Gamix</span> ' + 
             '! 🎮. Prepárate para horas de diversión. ' +
             '<span class="hashtag">#Gaming</span> ' +
-            '<span class="hashtag">#Gamix</span> ' +
             '<span class="hashtag">#NuevosJuegos</span>', 
         publicationDay: "12:30 PM · Septiembre 15, 2025 ·"
     },

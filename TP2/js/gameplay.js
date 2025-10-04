@@ -32,12 +32,14 @@ dislikeBtn.addEventListener("click", () => {
         }
     });
 
+    
 // Favoritos
 const favBtn = document.getElementById("favBtn");
 
 favBtn.addEventListener("click", () => {
         favBtn.classList.toggle("active");
     });
+
 
 // Controles
 const controlsBtn = document.getElementById("controlsBtn");
@@ -46,6 +48,7 @@ const controlsSection = document.querySelector(".controls");
 controlsBtn.addEventListener("click", () => {
   controlsSection.scrollIntoView({ behavior: "smooth" });
 });
+
 
 // Compartir
 const shareBtn = document.getElementById("shareBtn");
@@ -66,6 +69,7 @@ shareBtn.addEventListener("click", async () => {
     });
 
 
+// Pantalla Completa
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 const gameSection = document.querySelector(".game-running");
 
@@ -76,6 +80,7 @@ fullscreenBtn.addEventListener("click", () => {
         document.exitFullscreen();
     }
 });
+
 
 
 

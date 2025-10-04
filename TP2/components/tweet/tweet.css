@@ -40,7 +40,7 @@
 
     width: fit-content;
     height: fit-content;
-    gap: 8px;
+    gap: 4px;
 }
 
 .img-logo {
@@ -48,8 +48,9 @@
     height: 40px;
 }
 
-.logo-name {
+.tweet-username {
     color: var(--grey-800);
+    font-size: var(--font-size-small);
 }
 
 .verified-img{

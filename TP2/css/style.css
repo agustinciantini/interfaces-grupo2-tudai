@@ -56,7 +56,12 @@
 
 .logo-name {
     font-size: var(--font-size-large);
+    font-family: var(--font-base);
+    font-weight: bold;
     background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%,#66797B 50%,#C0392B 80%,#E74C3C 100%);
     background-clip: text;
     color: transparent;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
 }
