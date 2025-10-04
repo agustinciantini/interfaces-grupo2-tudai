@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    const contenedor = document.getElementById("footer-container");
+
+    if (!contenedor) {
+        console.error("Error: El contenedor con id 'footer-container' no se encontró en el DOM.");
+        return;
+    }
+
+    fetch("/TP2/components/footer/footer-template.html")
+        .then(res => {
+            if (!res.ok) throw new Error(`Error al cargar la plantilla: ${res.statusText} (${res.status})`);
+            return res.text();
+        })
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const template = doc.getElementById("footer-template");
+
+            if (!template) {
+                console.error("Error: No se encontró el <template> con id 'footer-template'.");
+                return;
+            }
+
+            const clone = template.content.cloneNode(true);
+            contenedor.appendChild(clone);
+        })
+        .catch(err => console.error("Error cargando el template:", err));
+});

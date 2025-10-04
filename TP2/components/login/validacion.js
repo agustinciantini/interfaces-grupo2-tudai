@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'repetir-contrasena', errorId: 'repetir-contrasena-error', validator: validateRepetirContrasena }
     ];
 
+    // Muestra u oculta el mensaje de error.
+
     function showError(element, message) {
         element.textContent = message;
         element.style.display = 'block';
@@ -95,24 +97,24 @@ function validateRepetirContrasena() {
         }
     });
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    // form.addEventListener('submit', function(event) {
+    //     event.preventDefault();
 
-        let formIsValid = true;
-        inputs.forEach(inputInfo => {
-            if (!inputInfo.validator()) {
-                formIsValid = false;
-            }
-        });
+    //     let formIsValid = true;
+    //     inputs.forEach(inputInfo => {
+    //         if (!inputInfo.validator()) {
+    //             formIsValid = false;
+    //         }
+    //     });
 
-        const recaptchaCheckbox = document.getElementById('recaptcha');
-        if (!recaptchaCheckbox.checked) {
-            alert('Por favor, confirma que no eres un robot.');
-            formIsValid = false;
-        }
+    //     const recaptchaCheckbox = document.getElementById('recaptcha');
+    //     if (!recaptchaCheckbox.checked) {
+    //         alert('Por favor, confirma que no eres un robot.');
+    //         formIsValid = false;
+    //     }
 
-        if (formIsValid) {
-            alert('¡Formulario enviado con éxito!');
-        }
-    });
+    //     if (formIsValid) {
+    //         alert('¡Formulario enviado con éxito!');
+    //     }
+    // });
 });
