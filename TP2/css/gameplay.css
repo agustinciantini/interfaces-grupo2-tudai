@@ -1,10 +1,12 @@
-/* @import url('style.css'); */
 
 .title-typography-gameplay{
     font-family: var(--font-base);
     font-size: var(--font-size-medium);
     color: var(--secondary-200);
     font-weight: bold;
+
+    margin: 0px 0px;
+    text-align: center;     
 }
 
 .typography-description{
@@ -14,26 +16,8 @@
 
     width: 100%;
     height: fit-content;
-}
-
-
-/* -------------------------------- Informacion del Juego ---------------------------------------- */
-.game-infomation-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    overflow: hidden;   /* equivale a Clip content */
-    /* width: 920px;
-    height: 1069px; */
-    width: fit-content;
-    height: fit-content;
-    padding: 0px 22px;
-    gap: 10px;
-    box-sizing: border-box; /* incluye padding/borde en el tamaño */
-    background-color: var(--primary-600);
-    border-radius: 15px;
+    margin: 3px 0px;
+    box-sizing: border-box;
 }
 
 .title{
@@ -44,18 +28,262 @@
     height: fit-content;
     gap: 10px;
     padding: 0px;
+    margin: 3px 0px;
+}
+
+.gameplay-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.additional-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-container-playing{
+    display: flex;
+    gap: 33px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------- Juego en ejecucion --------------------------------------------- */
+
+
+.game-running{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 928px;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.game-running:fullscreen{
+  background: black;
+}
+
+.game-running:fullscreen #game-preview,
+.game-running:fullscreen #game-playing {
+  width: 80%;
+  height: 90%;  
+}
+
+.game-preview:fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+#game-preview{
+    position: relative;
+    display: block;
+    width: 928px;
+    height: 617px;
+    padding: 0px;
+}
+
+#game-preview img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover; 
+    display: block;
+}
+
+.button-game-running{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra el botón */
+
+    display: flex;
+
+    width: 117px;
+    height: 43px;
+    gap: 10px;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 4px;
+    background-color: var(--accent-700);
+    box-shadow: 0px 0px 10px 0px var(--accent-700); 
+    cursor: pointer;
+}
+
+.button-game-running p{
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    font-size: var(--font-size-large);
+}
+
+.button-game-running img{
+    width: 24px;
+    height: 24px;
+}
+
+#game-playing{
+    display: none;
+    position: relative;
+    width: 928px;
+    height: 617px;
+    padding: 0px;
+}
+
+#game-playing img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover; 
+    display: block;
+}
+
+.game-running-options button{
+    background: none;
+    border: none;
+    width: fit-content;
+    height: 38px;
+    cursor: pointer;
+}
+
+#timer{
+    font-family: var(--font-base);
+    font-size: var(--font-size-extra-large);
+    color: var(--primary-500);
+    font-weight: bold;
+
+    position: absolute;
+    margin: 0px;
+    top: 2%;
+    right: 1%;
+}
+
+#exit-game{
+    position: absolute;
+    top: 2%;
+    left: 1%;
+}
+
+#game-configuration{
+    position: absolute;
+    bottom: 2%;
+    right: 1%;
+}
+
+#game-help{
+    position: absolute;
+    bottom: 2%;
+    right: 6%;
+}
+
+#game-clue{
+    position: absolute;
+    bottom: 2%;
+    right: 10%;
+}
+
+.game-bar-container-running{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 55px;
+    padding: 0px 12px;
+    background-color: var(--primary-500);
+    box-sizing: border-box;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.title-bar-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+    gap: 0px;
+    padding: 0px;
+}
+
+.name-game{
+    font-size: var(--font-size-large);
+    width: 100%;
+    text-align: left;
+}
+
+.number-of-views{
+    width: 100%;
+    font-size: var(--font-size-tiny);
+    text-align: center;
+    white-space: nowrap;  
+}
+
+.interactions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.interactions button {
+  border: none;
+  background: var(--primary-300);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.interactions img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;  /*La imagen se escala lo máximo posible para entrar completa en el contenedor, manteniendo su proporción.*/
+}
+
+.interactions:fullscreen {
+    object-fit: cover;
+}
+
+button.active {
+  background: var(--primary-600); 
+} 
+
+/* --------------------------------------------- Informacion del Juego ---------------------------------------- */
+.game-infomation-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    overflow: hidden;   /* equivale a Clip content */
+    height: fit-content;
+    width: 928px;
+    padding: 0px 22px;
+    gap: 10px;
+    box-sizing: border-box; /* incluye padding/borde en el tamaño */
+    background-color: var(--primary-600);
+    border-radius: 15px;
 }
 
 .game-title{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    gap: 10px;
-    /* padding: 0px 5px; */
     padding: 5px 0px;
-    width: fit-content; /* equivale al Hug contents */
-    height: fit-content;
     box-sizing: border-box;
 }
 
@@ -64,16 +292,13 @@
     height: 100%;
     
     font-size: var(--font-size-extra-large);
-    /* font-family: var(--font-base);
-    color: var(--secondary-200);
-    font-weight: bold; */
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.container-categories-game{
+.container-categories-game{     
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -85,29 +310,8 @@
     padding: 0px 10px;
 }
 
-/* .title-categories{
+.game-categories{           
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    
-    width: fit-content;
-    height: fit-content;
-    gap: 4px;
-    padding: 0px;
-} */
-
-/* .title-categories p{
-    font-family: var(--font-base);
-    font-size: var(--font-size-medium);
-    font-weight: bold;
-    color: var(--secondary-200);
-    /* ----si queda mal posicionado el texto agregar el alineamiento que tengo en figma---- 
-} */
-
-.game-categories{
-    display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -120,23 +324,10 @@
 
 #categories{
     display: flex;
+    gap: 15px;
 }
 
-.game-category{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    /* width: fit-content;  */
-    height: fit-content;
-    gap: 10px;
-    padding: 3px 16px;
-    background-color: var(--primary-700);
-    color: var(--secondary-200);
-    border-radius: 9px;
-}
-
-.game-information{
+.game-information{      
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -148,7 +339,7 @@
     padding: 0px;
 }
 
-.descrption-game{
+.descrption-game{       
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -159,25 +350,14 @@
     gap: 12px;
     padding: 0px 10px;
     color: var(--secondary-200);
+    box-sizing: border-box;
 }
 
-/* .title-description{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+.title-description img{
     width: fit-content;
-    height: fit-content;
-    gap: 5px;
-    padding: 0px;
-} */
-
-/* .title-container-description p{
-    font-family: var(--font-base);
-    font-size: var(--font-size-medium);
-    font-weight: bold;
-    color: var(--secondary-200);
-} */
+    height: 20px;
+    padding: 3px;
+}
 
 .divider{
     background-color: var(--secondary-200);
@@ -185,13 +365,36 @@
     height: 1px;
 }
 
-.description{
-    width: 100%;
-    height: fit-content;
+.description{      
     padding: 0px 10px;
 }
 
-.how-to-play-container{
+.how-to-play-container{  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: fit-content;
+    gap: 3px;
+    padding: 10px 0px;
+}
+
+.how-to-play{     
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.rules-of-the-game{   
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -202,8 +405,8 @@
     gap: 3px;
     padding: 0px;
 }
-
-.how-to-play{
+ 
+.title-rules-container{     
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -212,57 +415,17 @@
     width: 100%;
     height: fit-content;
     gap: 10px;
-    padding: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
-
-.game-description{
-    display: flex;
-    align-items: center;
-
-    width: fit-content;
-    height: fit-content;
-    gap: 4px;
-    padding: 0px;
-}
-
-.rules-of-the-game{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    width: 100%;
-    height: fit-content;
-    gap: 3px;
-    padding: 0px;
-}
-
-.title-rules-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    width: 100%;
-    height: fit-content;
-    gap: 10px;
-    padding: 10px;
-}
-
-/* .title-rules{
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-    padding: 0px;
-} */
-
+  
 .rules-of-the-game ul li{
     gap: 10px;
     padding: 0px 10px;
+    box-sizing: border-box;
 }
-
-.controls{
+  
+.controls{     
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -279,17 +442,8 @@
     height: fit-content;
     gap: 10px;
     padding: 0px 10px;
+    box-sizing: border-box;
 }
-
-/* .title-controls{
-    display: flex;
-    align-items: center;
-
-    width: fit-content;
-    height: fit-content;
-    gap: 10px;
-    padding: 0px;
-} */
 
 .control-image{
     display: flex;
@@ -304,7 +458,7 @@
     height: 120px;
 }
 
-.gameplay-information{
+.gameplay-information{  
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -316,7 +470,7 @@
     padding: 0px;
 }
 
-.title-gameplay-container{
+.title-gameplay-container{     
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -325,7 +479,8 @@
     width: 100%;
     height: fit-content;
     gap: 10px;
-    padding: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 .gameplay-images{
@@ -334,7 +489,7 @@
     width: 100%;    /* equivalente a fill container en ancho */ 
     height: 100%;   /* equivalente a fill container en alto */ 
     gap: 5px;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
     overflow: hidden;   /* equivale a Clip content */
     box-sizing: border-box; /* asegura que padding se incluya en el tamaño */
 }
@@ -345,6 +500,108 @@
     object-fit: cover;  /* hace que las imágenes llenen la celda sin deformarse */
 }
 
-/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------------------- Comentarios --------------------------------------------- */
 
+.comments-seccion {
+    display: flex;
+    flex-direction: column;
+
+    width: 928px;
+    height: fit-content;
+    gap: 10px;
+    padding: 0px;
+}
+
+.comment-post-container {
+    width: 100%;
+    height: fit-content;
+    padding: 8px 0px;
+    border-radius: 10px;
+    background-color: var(--primary-600);
+}
+
+.comment-post {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.active-session-logo {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+}
+
+.input-opinion {
+    width: 100%;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: var(--secondary-200);
+}
+
+.post-button {
+    width: 10%;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: var(--accent-700);
+    font-size: var(--font-size-small);
+    cursor: pointer;
+}
+
+#comments-others {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* ------------------------------------------- Juegos adicionales --------------------------------------------- */
+
+.recommended-games{
+    background-color: var(--primary-600);
+    width: 100%;
+    height: 1132px;
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------------------------------- Tweets ----------------------------------------------- */
+
+.latest-news-container{    
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.latest-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#tweets-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
 
