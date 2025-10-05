@@ -27,12 +27,14 @@
     --accent-600: #FF9723;
     --accent-700: #FB8501;
 
+    --grey-100: #ffffff;
     --grey-200: #ECECEC;
     --grey-300: #C3C3C3;
     --grey-400: #A4A2A2;
     --grey-500: #808080;
     --grey-600: #515151;
     --grey-700: #363636;
+    --grey-800: #1d1d1d;
 
     --light-purple: #BBB6FF;
     --red: #CA4B46;
@@ -48,10 +50,23 @@
     --font-size-small: 16px;
     --font-size-tiny: 14px;
     --font-size-micro: 12px;
+
+    background-color: var(--primary-700);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.logo-name {
+    font-size: var(--font-size-large);
+    font-family: var(--font-base);
+    font-weight: bold;
+    background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%,#66797B 50%,#C0392B 80%,#E74C3C 100%);
+    background-clip: text;
+    color: transparent;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
 }
