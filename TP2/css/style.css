@@ -65,3 +65,12 @@
     height: fit-content;
     margin: 0;
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    display: flex;
+}

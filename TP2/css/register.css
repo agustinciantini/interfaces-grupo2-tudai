@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
 }
 
-.container { padding: 20px; }
+.register-container { padding: 20px; }
 
 .form-container {
   width: 350px;
@@ -28,7 +28,7 @@ body {
 
 .logo { width: 60px; height: 60px; padding: 5px; }
 
-.title {
+.register-title {
   font-size: 2em;
   font-weight: 600;
 }

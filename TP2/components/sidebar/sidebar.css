@@ -166,3 +166,11 @@ body {
 body.menu-open {
   overflow: hidden;
 }
+
+
+/* ------------------------------------------------------ */
+.pruebaaa {
+  background-color: red;
+  width: 30px;
+  height: 100%;
+}
