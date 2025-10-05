@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  background-color: var(--primary-700);
+}
+
+.carousel-container {
+  position: relative;
+}
+.categories-link {
+  font-family: var(--font-base);
+  font-size: var(--font-size-small);
+  color: var(--grey-200);
+  font-weight: bold;
+  padding: 0 2px;
+}
+.categories-link span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.categories-link span:last-child {
+  margin-right: 0;
+}
+.see-more-link {
+  color: var(--accent-700);
+}
+/* -----------------------CARUSEL CATEGORIAS */
+        /* CONTENEDOR DE TARJETAS DE JUEGO - CARUSEL CATEGORIAS */
+.carousel {
+  position: relative;
+  display: flex;
+  padding: 4px;
+  gap: 10px;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+        /* TARJETAS DE JUEGOS- CARUSEL CATEGORIAS */
+.game-card {
+  position: relative;
+  flex: 0 0 clamp(150px, 20vw, 240px);
+  height: clamp(100px, 15vw, 140px);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  position: relative;
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  border: 3px solid var(--accent-700);
+  border-radius: 10px;
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene proporciones sin deformar */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.game-card img:hover {
+  border-radius: 6px;
+  transform: scale(1.1);
+}
+
+.game-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  
+  background: linear-gradient(   /* degradado con varios niveles */
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,   /* negro intenso al fondo */
+    rgba(0, 0, 0, 0.65) 40%, /* un poco mas claro hasta aprox la altura del texto */
+    rgba(0, 0, 0, 0.6) 70%,  /* se va aclarando más arriba */
+    transparent 100%         /* completamente transparente */
+  );
+  padding: 20px 0 5px 5px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-info {
+  transform: translateY(0);
+}
+
+.game-info h3 {
+  font-family: var(--font-base);
+  font-size: var(--font-size-small);
+  color: var(--secondary-200);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.game-card:hover .game-info h3 {
+  opacity: 1;
+  border-radius: 10px;
+}
+        /* BOTONES CARRUSEL CATEGORIAS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.816);
+  border: none;
+  color:var(--grey-200);
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 30;
+}
+
+.carousel-btn.left {
+  left: 0px;
+  height: 100%;
+}
+.carousel-btn.right {
+  right: 0px;
+  height: 100%;
+}
+.carousel-btn.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
+}
+
+/* -----------------------------------CONTENEDORES PRINCIPALES */
+#carouseles-container-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
