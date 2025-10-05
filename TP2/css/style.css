@@ -50,3 +50,8 @@
     --font-size-micro: 12px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
