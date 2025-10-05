@@ -1,8 +1,6 @@
 body {
     margin: 0;
     font-family: 'Jandi', sans-serif;
-    background: #f5f5f5;
-    color: #fff;
 }
 
 .visually-hidden {
@@ -19,7 +17,7 @@ body {
 .sidebar {
     background-image: linear-gradient(to bottom, var(--primary-600), var(--primary-700));
     /* cuando se remueve el position, se rompe la pagina. Cuando está colocado se mueve todo el carrusel. */
-    position: fixed;
+    /* position: absolute; */
     top: 51px;
     height: 100vh;
     z-index: 1000;
