@@ -106,11 +106,5 @@ function validateRepetirContrasena() {
                  formIsValid = false;
              }
          });
-
-         const recaptchaCheckbox = document.getElementById('recaptcha');
-         if (!recaptchaCheckbox.checked) {
-             alert('Por favor, confirma que no eres un robot.');
-             formIsValid = false;
-         }
      });
 });
