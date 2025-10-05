@@ -6,34 +6,54 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link href="components/carousel/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./components/header/header.css">
+    <link rel="stylesheet" href="./components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="./components/footer/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./images/logo-gamix.png"> 
+
 
     <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
-    <title>Gamix</title>
+    <title>Gamix — La mejor plataforma de juegos online.</title>
 </head>
 <body>
     
-    <header>
+<!-- HEADER COMPLETO CON SU SECCIÓN DE PERFIL -->
 
+    <header>
+        <div id="header-container"></div>
     </header>
 
-    <main id="main-container">
-        <aside class="sidebar">
-            <!-- barra de hamburguesa lateral -->
-        </aside>
+<!-- SIDEBAR DESPLEGABLE CON SUS CATEGORÍAS -->
 
+<div id="sidebar-container"></div>
+
+<main>
         <div id="container">
             <!-- switch entre las 3 paginas del sitio -->
         </div>
+</main>    
 
-    </main>
+<!-- SECCIÓN DEL FAT FOOTER -->
 
     <footer>
-
+        <div id="footer-container"></div>
     </footer>
+    
+
+    <div class="footer-bottom">
+        <p>© 2025 GAMIX — TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+    
+<!-- SECCIÓN SCRIPTS -->
 
     <script src="components/carousel/carousel.js"></script>
     <script src="js/home.js"></script>
     <script src="js/index.js"></script>
 
+    <script src="./components/footer/footer.js"></script>
+    <script src="./components/header/header.js"></script>
+    <script src="./components/sidebar/sidebar.js"></script>
 </body>
 </html>
