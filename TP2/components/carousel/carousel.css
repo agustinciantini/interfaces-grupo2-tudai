@@ -9,6 +9,8 @@
 
 .carousel-container {
   position: relative;
+  /* display: flex; */
+  width: 1535px; 
 }
 .categories-link {
   font-family: var(--font-base);

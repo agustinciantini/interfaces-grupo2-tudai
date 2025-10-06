@@ -26,7 +26,9 @@ body {
     overflow-x: hidden;
     transition: width 0.3s ease-in-out;
 }
-
+.sidebar::-webkit-scrollbar{
+    display: none; 
+}
 .sidebar-title,
 .sidebar-list-item span:not(.icon) {
     display: none;
