@@ -114,3 +114,89 @@
     height: 18px;
     object-fit: contain;
 }
+
+.likeCommentBtn {
+    position: relative; 
+    z-index: 1; 
+    transition: transform 0.4s ease-out; 
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.likeCommentBtn:active {
+    transform: scale(0.85) translateY(2px);
+}
+
+.likeCommentBtn:active img {
+    transform: scale(0.70) rotate(10deg);
+    transition: transform 0.4s ease-out; 
+}
+
+.likeCommentBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px; 
+    height: 4px;
+    border-radius: 50%;
+    background-color: hotpink;
+    pointer-events: none;
+    opacity: 0;
+
+    box-shadow: 
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+        0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink;
+}
+
+.likeCommentBtn:active::before {
+    animation: sparkle-burst-max 1.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+}
+
+@keyframes sparkle-burst-max {
+    0% {
+        width: 4px; 
+        height: 4px;
+        opacity: 1;
+        box-shadow: 
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink,
+            0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink, 0 0 0 hotpink;
+    }
+    100% {
+        width: 4px;
+        height: 4px;
+        opacity: 0;
+        box-shadow: 
+            -120px -120px 0 rgba(255, 105, 180, 0), 120px -120px 0 rgba(255, 105, 180, 0),
+            -130px 0px 0 rgba(255, 105, 180, 0), 130px 0px 0 rgba(255, 105, 180, 0),
+            -110px 110px 0 rgba(255, 105, 180, 0), 110px 110px 0 rgba(255, 105, 180, 0),
+            0px 130px 0 rgba(255, 105, 180, 0), 0px -130px 0 rgba(255, 105, 180, 0),
+            -75px -35px 0 rgba(255, 105, 180, 0), 75px -35px 0 rgba(255, 105, 180, 0),
+            -75px 35px 0 rgba(255, 105, 180, 0), 75px 35px 0 rgba(255, 105, 180, 0),
+            -35px -75px 0 rgba(255, 105, 180, 0), 35px -75px 0 rgba(255, 105, 180, 0),
+            -35px 75px 0 rgba(255, 105, 180, 0), 35px 75px 0 rgba(255, 105, 180, 0),
+            -55px -15px 0 rgba(255, 105, 180, 0), 55px -15px 0 rgba(255, 105, 180, 0),
+            -55px 15px 0 rgba(255, 105, 180, 0), 55px 15px 0 rgba(255, 105, 180, 0),
+            -15px -55px 0 rgba(255, 105, 180, 0), 15px -55px 0 rgba(255, 105, 180, 0),
+            -15px 55px 0 rgba(255, 105, 180, 0), 15px 55px 0 rgba(255, 105, 180, 0),
+            -80px -40px 0 rgba(255, 105, 180, 0), 80px -40px 0 rgba(255, 105, 180, 0),
+            -80px 40px 0 rgba(255, 105, 180, 0), 80px 40px 0 rgba(255, 105, 180, 0),
+            -40px -80px 0 rgba(255, 105, 180, 0), 40px -80px 0 rgba(255, 105, 180, 0),
+            -40px 80px 0 rgba(255, 105, 180, 0), 40px 80px 0 rgba(255, 105, 180, 0);
+    }
+}

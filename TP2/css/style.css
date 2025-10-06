@@ -54,6 +54,11 @@
     background-color: var(--primary-700);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .logo-name {
     font-size: var(--font-size-large);
     font-family: var(--font-base);

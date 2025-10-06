@@ -115,16 +115,6 @@ function initValidation(container) {
                     }
                 });
         
-                const recaptchaCheckbox = container.querySelector('#recaptcha');
-                if (!recaptchaCheckbox.checked) {
-                    alert('Por favor, confirma que no eres un robot.');
-                    formIsValid = false;
-                }
-        
-                if (formIsValid) {
-                    alert('¡Formulario enviado con éxito!');
-                    // Aquí puedes enviar el formulario a un servidor con AJAX o redirigir
-                }
             });
         }
     // });

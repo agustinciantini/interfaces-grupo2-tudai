@@ -3,10 +3,30 @@
 // function initHeader(container){
     const header = document.querySelector(".header-index");
 
+    if (!header) {
+        console.error("Error: El contenedor con id 'header-container' no se encontró en el DOM.");
+        return;
+    }
+
     fetch("components/header/header.html")
         .then(res => res.text())
         .then(html => {
+            const template = doc.getElementById("header-template");
+
+            if (!template) {
+                console.error("Error: No se encontró el <template> con id 'header-template'.");
+                return;
+            }
             header.innerHTML = html;
+
+
+            
+            // verrrrrrrrrrrrrrrrrR
+            // const clone = template.content.cloneNode(true);
+            // header.appendChild(clone);
+
+
+
 
             // Obtiene el elemento del avatar del usuario en el header.
             // El header-user-avatar se encuentra dentro de la clase header-user.
@@ -40,3 +60,4 @@
         });
 
 // }
+
