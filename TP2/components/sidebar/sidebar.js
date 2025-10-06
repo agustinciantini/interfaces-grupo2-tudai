@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!contenedor) return; 
 
     // 1. Carga del template.
-    fetch("/TP2/components/sidebar/sidebar-template.html")
+    fetch("components/sidebar/sidebar-template.html")
         .then(res => {
 
             if (!res.ok) {

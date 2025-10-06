@@ -18,7 +18,7 @@
     width: 50px;
     padding: 15px 0;
     transition: width 0.3s ease-in-out;
-    overflow-x: hidden; 
+    /* overflow-x: hidden;  */
 }
 
 .sidebar-title,
