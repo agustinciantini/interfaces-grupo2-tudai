@@ -35,16 +35,16 @@ function initTweets(container) {
     
     
     // Referencias al DOM:
-    const tweetContainer = container.getElementById("tweets-container");
+    const tweetContainer = container.querySelector("#tweets-container");
     
     
     // Traigo el template desde tweet.html:
     fetch("components/tweet/tweet.html")
         .then(res => res.text())
         .then(html => {
-            container.getElementById("tweets-container").innerHTML = html;
+            container.querySelector("#tweets-container").innerHTML = html;
     
-            const template = container.getElementById("tweet-template");
+            const template = container.querySelector("#tweet-template");
     
             tweets.forEach(tweet => {
                 let clone = template.content.cloneNode(true);

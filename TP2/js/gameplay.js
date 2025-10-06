@@ -3,22 +3,22 @@ function initGameplay(container) {
     // Jugar 
     const playGameBtn = container.querySelector(".button-game-running");
     playGameBtn.addEventListener("click", function() {
-            container.getElementById("game-preview").style.display = "none";
-            container.getElementById("game-playing").style.display = "block";
+            container.querySelector("#game-preview").style.display = "none";
+            container.querySelector("#game-playing").style.display = "block";
         });
     
     // Salir del juego
-    const exitGameBtn = container.getElementById("exit-game");
+    const exitGameBtn = container.querySelector("#exit-game");
     exitGameBtn.addEventListener("click", () => {
-            container.getElementById("game-preview").style.display = "block";
-            container.getElementById("game-playing").style.display = "none";
+            container.querySelector("#game-preview").style.display = "block";
+            container.querySelector("#game-playing").style.display = "none";
         });
     
     //--------------------------------- Interacciones relacionadas al juego ------------------------------ 
     
     // Like or Dislike
     const likeBtn = container.querySelector(".likeBtn");
-    const dislikeBtn = container.getElementById("dislikeBtn");
+    const dislikeBtn = container.querySelector("#dislikeBtn");
     
     likeBtn.addEventListener("click", () => {
             likeBtn.classList.toggle("active");     //le doy la clase active al boton
@@ -36,7 +36,7 @@ function initGameplay(container) {
     
         
     // Favoritos
-    const favBtn = container.getElementById("favBtn");
+    const favBtn = container.querySelector("#favBtn");
     
     favBtn.addEventListener("click", () => {
             favBtn.classList.toggle("active");
@@ -44,7 +44,7 @@ function initGameplay(container) {
     
     
     // Controles
-    const controlsBtn = container.getElementById("controlsBtn");
+    const controlsBtn = container.querySelector("#controlsBtn");
     const controlsSection = container.querySelector(".controls");
     
     controlsBtn.addEventListener("click", () => {
@@ -53,7 +53,7 @@ function initGameplay(container) {
     
     
     // Compartir
-    const shareBtn = container.getElementById("shareBtn");
+    const shareBtn = container.querySelector("#shareBtn");
     
     shareBtn.addEventListener("click", async () => {
             if (navigator.share) {
@@ -72,7 +72,7 @@ function initGameplay(container) {
     
     
     // Pantalla Completa
-    const fullscreenBtn = container.getElementById("fullscreenBtn");
+    const fullscreenBtn = container.querySelector("#fullscreenBtn");
     const gameSection = container.querySelector(".game-running");
     
     fullscreenBtn.addEventListener("click", () => {
@@ -83,7 +83,7 @@ function initGameplay(container) {
         }
     });
 
-    initCategories(container);
+    initCategoriesGameplay(container);
     initComments(container);
     initTweets(container);
 }

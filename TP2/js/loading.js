@@ -3,12 +3,12 @@
 function initLoading(container){
 
     // Elementos del DOM
-    const loader = container.getElementById('loader');
-    const logoContainer = container.getElementById('logoContainer');
-    const logoName = container.getElementById('logo-name-loading');
-    const loadingText = container.getElementById('loadingText');
-    const progressContainer = container.getElementById('progressContainer');
-    const progressBar = container.getElementById('progressBar');
+    // const loader = container.getElementById('loader');
+    const logoContainer = container.querySelector('#logoContainer');
+    const logoName = container.querySelector('#logo-name-loading');
+    const loadingText = container.querySelector('#loadingText');
+    const progressContainer = container.querySelector('#progressContainer');
+    const progressBar = container.querySelector('#progressBar');
     
     const particle1 = container.querySelector('.particle-1');
     const particle2 = container.querySelector('.particle-2');
@@ -69,7 +69,8 @@ function initLoading(container){
     
                     // Redirigir al home 
                     setTimeout(() => {
-                        window.location.href = '../homePrueba.html';
+                        // window.location.href = '../home.html';
+                        loadPage("home.html");
                     }, 3000);
                 }, 500);
             }, 300);

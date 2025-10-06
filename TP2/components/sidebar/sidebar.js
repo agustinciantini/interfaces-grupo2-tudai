@@ -3,12 +3,13 @@
 // function initSidebar(container){
     // container.addEventListener('DOMContentLoaded', () => {
     
-    const sidebarIndex = document.querySelector(".sidebar-index");
+    const sidebarIndex = document.getElementById("sidebar-container");
 
-    fetch("components/sidebar/sidebar.html")
+    fetch("components/sidebar/sidebar-template.html")
         .then(res => res.text())
         .then(html => {
-            sidebarIndex.innerHTML = html;
+            // sidebarIndex.innerHTML = html;
+            document.getElementById("sidebar-container").innerHTML = html;
         });
     
     const menuButton = document.querySelector('.header-menu-btn');
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    fetch("/TP2/components/sidebar/sidebar-template.html")
+    fetch("components/sidebar/sidebar-template.html")
         .then(res => res.text())
         .then(html => {
 

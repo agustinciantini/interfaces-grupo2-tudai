@@ -12,14 +12,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const contenedor = document.getElementById("footer-index");
+    const contenedor = document.querySelector(".footer-index");
 
-    if (!contenedor) {
-        console.error("Error: El contenedor con id 'footer-index' no se encontró en el DOM.");
-        return;
-    }
+    // if (!contenedor) {
+    //     console.error("Error: El contenedor con id 'footer-index' no se encontró en el DOM.");
+    //     return;
+    // }
 
-    fetch("/TP2/components/footer/footer-template.html")
+    if (!contenedor) throw new Error("Error: El contenedor con id 'footer-index' no se encontró en el DOM.");
+
+    fetch("components/footer/footer-template.html")
         .then(res => {
             if (!res.ok) throw new Error(`Error al cargar la plantilla: ${res.statusText} (${res.status})`);
             return res.text();

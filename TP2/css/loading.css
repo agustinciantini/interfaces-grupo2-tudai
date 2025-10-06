@@ -1,13 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-}
 
 .loader {
     position: fixed;
@@ -29,17 +19,17 @@ body {
     visibility: hidden;
 }
 
-.logo-container {
+.logo-container-loading {
     position: relative;
     animation: logoEntrance 1s ease-out;
     transition: all 0.8s ease;
 }
 
-.logo-container.swiping {
+.logo-container-loading.swiping {
     animation: logoSwipe 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-.logo-container.swiping .logo {
+.logo-container-loading.swiping .logo {
     animation: none;
     filter: drop-shadow(0 0 60px rgba(0, 255, 255, 1));
 }

@@ -1,7 +1,7 @@
-body {
+/* body {
     margin: 0;
     font-family: 'Jandi', sans-serif;
-}
+} */
 
 .visually-hidden {
     position: absolute;
@@ -18,8 +18,11 @@ body {
     background-image: linear-gradient(to bottom, var(--primary-600), var(--primary-700));
     /* cuando se remueve el position, se rompe la pagina. Cuando está colocado se mueve todo el carrusel. */
     /* position: absolute; */
-    top: 51px;
-    height: 100vh;
+    /* top: 51px;
+    height: 100vh; */
+    height: auto;
+    position: relative;
+
     z-index: 1000;
     width: 50px;
     padding: 15px 0;

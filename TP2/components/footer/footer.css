@@ -1,4 +1,4 @@
-html {
+/* html {
     height: 100%;
 }
 
@@ -14,13 +14,13 @@ body {
 
 main {
     flex-grow: 1;
-}
+} */
 
-footer {
+/* footer {
     padding: 20px 10px 10px;
     position: relative;
     background-image: linear-gradient(to bottom, var(--primary-600), var(--primary-700));
-}
+} */
 
 /* CONTENIDO PRINCIPAL DEL FOOTER */
 

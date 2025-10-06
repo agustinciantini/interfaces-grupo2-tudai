@@ -1,9 +1,5 @@
-body {
-  font-family: 'Jandi', sans-serif;
+.register-container {
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
@@ -26,7 +22,7 @@ body {
   margin-bottom: 20px;
 }
 
-.logo {
+.logo-login {
   width: 60px;
   height: 60px;
   padding: 5px;

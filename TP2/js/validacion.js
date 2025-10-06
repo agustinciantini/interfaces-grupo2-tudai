@@ -14,15 +14,19 @@ function initValidation(container) {
         ];
     
         function showError(element, message) {
-            element.textContent = message;
-            element.style.display = 'block';
-            element.previousElementSibling.classList.add('has-error');
+            if(element){
+                element.textContent = message;
+                element.style.display = 'block';
+                element.previousElementSibling.classList.add('has-error');
+            }
         }
     
         function hideError(element) {
-            element.textContent = '';
-            element.style.display = 'none';
-            element.previousElementSibling.classList.remove('has-error');
+            if(element){
+                element.textContent = '';
+                element.style.display = 'none';
+                element.previousElementSibling.classList.remove('has-error');
+            }
         }
     
         // Funciones de validación individuales

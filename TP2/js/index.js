@@ -50,6 +50,7 @@ function setupEvents(page) {
         }
 
         if (typeof initValidation === "function") {
+            console.log("Antes de init loginnn");
             initValidation(container); // engancho la lógica del js de login
         }
     }
@@ -73,7 +74,7 @@ function setupEvents(page) {
         }
     }
 
-    if (page === "homePrueba.html") {
+    if (page === "home.html") {
         console.log("444");
         const playBtn = container.querySelector(".play-peg-solitaire");
         if (playBtn) {
@@ -81,6 +82,7 @@ function setupEvents(page) {
         }
 
         if (typeof initHome === "function") {
+            console.log("antes de init HOMEe");
             initHome(container); // engancho la lógica del js de home
         }
     }
@@ -89,7 +91,7 @@ function setupEvents(page) {
         console.log("5555");
         const returnHome = container.querySelector(".return-home");
         if (returnHome) {
-            returnHome.addEventListener("click", () => loadPage("homePrueba.html"));
+            returnHome.addEventListener("click", () => loadPage("home.html"));
         }
 
         if (typeof initGameplay === "function") {

@@ -12,7 +12,7 @@ function initComments(container) {
     
     
     // Referencias al DOM:
-    const commentsContainer = container.getElementById("comments-others");
+    const commentsContainer = container.querySelector("#comments-others");
     const input = container.querySelector(".input-opinion");
     const postBtn = container.querySelector(".post-button");
     
@@ -21,11 +21,15 @@ function initComments(container) {
     fetch("components/game-comment/game-comment.html")
         .then(res => res.text())
         .then(html => {
-            const temp = container.createElement("div");
+            // const temp = container.createElement("div");
+            const temp = document.createElement("div");
+            
             temp.innerHTML = html;
-            container.body.appendChild(temp.firstElementChild); // añade el <template> al body
+            // container.body.appendChild(temp.firstElementChild); // añade el <template> al body
+            // document.body.appendChild(temp.firstElementChild); // añade el <template> al body
+            container.appendChild(temp.firstElementChild);
     
-            const template = container.getElementById("comment-template");
+            const template = container.querySelector("#comment-template");
     
             // Render inicial de comentarios
             comments.forEach(c => renderComment(c, template));

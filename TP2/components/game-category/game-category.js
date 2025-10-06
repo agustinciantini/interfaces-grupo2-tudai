@@ -21,17 +21,16 @@ const categorias = [
 ];
 
 function initCategoriesGameplay(container){
-
     // Referencias al DOM:
-    const categoriesContainer = container.getElementById("categories");
+    const categoriesContainer = container.querySelector("#categories");
     
     // Traigo el template desde game-category.html:
     fetch("components/game-category/game-category.html")
         .then(res => res.text())
         .then(html => {
-            container.getElementById("categories").innerHTML = html;
+            container.querySelector("#categories").innerHTML = html;
     
-            const template = container.getElementById("game-category-template");
+            const template = container.querySelector("#game-category-template");
     
             categorias.forEach(cat => {
                 if(cat.game.includes("PegSolitaire")){
@@ -45,13 +44,13 @@ function initCategoriesGameplay(container){
 }
 
 function initCategoriesSidebar(container) {
-    const categoriesContainer = container.getElementById("categories-sidebar");
+    const categoriesContainer = container.querySelector("#categories-sidebar");
 
     fetch("components/game-category/game-category.html")
         .then(res => res.text())
         .then(html => {
-            container.getElementById("categories-sidebar").innerHTML = html;
-            const template = container.getElementById("game-category-template");
+            container.querySelector("#categories-sidebar").innerHTML = html;
+            const template = container.querySelector("#game-category-template");
             const categoriesList = contenedor.querySelector("#categories-sidebar");
             const categoryTemplate = contenedor.querySelector("#category-item");
     

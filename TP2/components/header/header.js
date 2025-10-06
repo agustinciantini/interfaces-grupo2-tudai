@@ -1,32 +1,33 @@
 "use strict";
 
 // function initHeader(container){
+document.addEventListener("DOMContentLoaded", async () => {
     const header = document.querySelector(".header-index");
 
-    if (!header) {
-        console.error("Error: El contenedor con id 'header-container' no se encontró en el DOM.");
-        return;
-    }
-
-    fetch("components/header/header.html")
-        .then(res => res.text())
+    if (!header) throw new Error("El contenedor con id 'header-container' no se encontró en el DOM.");
+    
+    fetch("components/header/header-template.html")
+        .then(res => {
+            if (!res.ok) throw new Error("No se pudo cargar el archivo header-template.html");
+            return res.text();
+        })
         .then(html => {
-            const template = doc.getElementById("header-template");
+            // const temp = document.createElement("div");
+            // temp.innerHTML = html.trim();
 
-            if (!template) {
-                console.error("Error: No se encontró el <template> con id 'header-template'.");
-                return;
-            }
             header.innerHTML = html;
+                
+            const template = document.getElementById("header-template");
+            if (!template) throw new Error("Error: No se encontró el <template> con id 'header-template'.");
 
+            const clone = template.content.cloneNode(true);
+            header.appendChild(clone);
 
-            
-            // verrrrrrrrrrrrrrrrrR
-            // const clone = template.content.cloneNode(true);
-            // header.appendChild(clone);
-
-
-
+            const returnHome = document.querySelector(".header-logo");
+            console.log("Ancorr header", returnHome);
+            returnHome.addEventListener("click", () => {
+                loadPage("home.html");
+            });
 
             // Obtiene el elemento del avatar del usuario en el header.
             // El header-user-avatar se encuentra dentro de la clase header-user.
@@ -59,5 +60,5 @@
             
         });
 
-// }
+});
 
