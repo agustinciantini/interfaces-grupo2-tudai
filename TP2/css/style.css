@@ -96,7 +96,7 @@ footer.footer-index {
     flex-shrink: 0;
     width: 100%;
     /* background-color: var(--primary-700); */
-
+    position: relative;
     padding: 20px 10px 10px;
     /* position: relative; */
     background-image: linear-gradient(to bottom, var(--primary-600), var(--primary-700));

@@ -6,11 +6,11 @@ function initValidation(container) {
         const form = container.querySelector('#registration-form');
     
         const inputs = [
-            { id: 'usuario', errorId: 'usuario-error', validator: validateUsuario },
-            { id: 'edad', errorId: 'edad-error', validator: validateEdad },
-            { id: 'correo', errorId: 'correo-error', validator: validateCorreo },
-            { id: 'contrasena', errorId: 'contrasena-error', validator: validateContrasena },
-            { id: 'repetir-contrasena', errorId: 'repetir-contrasena-error', validator: validateRepetirContrasena }
+            { id: 'usuario', errorId: 'usuario-error', validator: validateUser },
+            { id: 'edad', errorId: 'edad-error', validator: validateAge },
+            { id: 'correo', errorId: 'correo-error', validator: validateMail },
+            { id: 'contrasena', errorId: 'contrasena-error', validator: validatePassword },
+            { id: 'repetir-contrasena', errorId: 'repetir-contrasena-error', validator: validateRepeatPassword }
         ];
     
         function showError(element, message) {
@@ -30,7 +30,7 @@ function initValidation(container) {
         }
     
         // Funciones de validación individuales
-        function validateUsuario() {
+        function validateUser() {
             const usuarioInput = container.querySelector('#usuario');
             const usuarioError = container.querySelector('#usuario-error');
             if (usuarioInput.value.length < 4) {
@@ -42,7 +42,7 @@ function initValidation(container) {
             }
         }
     
-        function validateEdad() {
+        function validateAge() {
             const edadInput = container.querySelector('#edad');
             const edadError = container.querySelector('#edad-error');
             const edad = parseInt(edadInput.value);
@@ -55,7 +55,7 @@ function initValidation(container) {
             }
         }
     
-        function validateCorreo() {
+        function validateMail() {
             const correoInput = container.querySelector('#correo');
             const correoError = container.querySelector('#correo-error');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -68,7 +68,7 @@ function initValidation(container) {
             }
         }
     
-        function validateContrasena() {
+        function validatePassword() {
             const contrasenaInput = container.querySelector('#contrasena');
             const contrasenaError = container.querySelector('#contrasena-error');
             const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|:;"'<,>.?/~`]).{8,}$/;
@@ -81,7 +81,7 @@ function initValidation(container) {
             }
         }
     
-    function validateRepetirContrasena() {
+    function validateRepeatPassword() {
         const repetirContrasenaInput = container.querySelector('#repetir-contrasena');
         const repetirContrasenaError = container.querySelector('#repetir-contrasena-error');
         const contrasenaInput = container.querySelector('#contrasena');

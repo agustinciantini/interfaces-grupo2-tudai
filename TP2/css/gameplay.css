@@ -129,7 +129,7 @@
 }
 
 .button-game-running:hover {
-    animation: glow-pulse 0.8s ease-in-out infinite;
+    animation: glow-pulse 1.2s ease-in-out infinite;
 }
 
 .button-game-running p {
@@ -313,7 +313,7 @@
 
 /* Dispara la animación con :active y la resetea al soltar */
 .likeBtn:active::before {
-    animation: sparkle-burst-max 1.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+    animation: sparkle-burst-max 2.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
 }
 
 @keyframes sparkle-burst-max {

@@ -1,23 +1,23 @@
 "use strict";
 // Categorias:
-const categorias = [
-    { icon: "🏈", name: "sport", game:[] },
-    { icon: "⚔️", name: "action", game:[] },
-    { icon: "🏁", name: "adventure", game:[] },
-    { icon: "🃏", name: "cards", game:[] },
-    { icon: "🚗", name: "cars", game:[] },
-    { icon: "🎯", name: "shots", game:[] },
-    { icon: "🏍️", name: "motorcycles", game:[] },
-    { icon: "🧩", name: "puzzle", game:["PegSolitaire"] },
-    { icon: "👗", name: "fashion", game:[] },
-    { icon: "🍔", name: "cook", game:[] },
-    { icon: "👻", name: "terrifying", game:[] },
-    { icon: "🚪", name: "exhaust", game:[] },
-    { icon: "🪖", name: "war", game:[] },
-    { icon: "🔫", name: "arms", game:[] },
-    { icon: "🎨", name: "paint", game:[] },
-    { icon: "💡", name: "strategy", game:["PegSolitaire"] },
-    { icon: "⚽", name: "soccer", game:[] }
+export const categorias = [
+    { icon: "🏈", name: "Deportes", game:[] },
+    { icon: "⚔️", name: "Acción", game:[] },
+    { icon: "🏁", name: "Aventura", game:[] },
+    { icon: "🃏", name: "Cartas", game:[] },
+    { icon: "🚗", name: "Autos", game:[] },
+    { icon: "🎯", name: "Disparos", game:[] },
+    { icon: "🏍️", name: "Motocicletas", game:[] },
+    { icon: "🧩", name: "Puzzle", game:["PegSolitaire"] },
+    { icon: "👗", name: "Moda", game:[] },
+    { icon: "🍔", name: "Cocina", game:[] },
+    { icon: "👻", name: "Terror", game:[] },
+    { icon: "🚪", name: "Escape", game:[] },
+    { icon: "💥", name: "Guerra", game:[] },
+    { icon: "🔫", name: "Armas", game:[] },
+    { icon: "🎨", name: "Dibujo", game:[] },
+    { icon: "💡", name: "Estrategia", game:["PegSolitaire"] },
+    { icon: "⚽", name: "Fútbol", game:[] }
 ];
 
 function initCategoriesGameplay(container){
