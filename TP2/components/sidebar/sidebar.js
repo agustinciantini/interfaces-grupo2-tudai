@@ -1,37 +1,25 @@
 "use strict";
-
-const categorias = [
-    { icon: "🏈", name: "Sport", game:[] },
-    { icon: "⚔️", name: "Action", game:[] },
-    { icon: "🏁", name: "Adventure", game:[] },
-    { icon: "🃏", name: "Cards", game:[] },
-    { icon: "🚗", name: "Cars", game:[] },
-    { icon: "🎯", name: "Shots", game:[] },
-    { icon: "🏍️", name: "Motorcycles", game:[] },
-    { icon: "🧩", name: "Puzzle", game:[] },
-    { icon: "👗", name: "Fashion", game:[] },
-    { icon: "🍔", name: "Cook", game:[] },
-    { icon: "👻", name: "Terrifying", game:[] },
-    { icon: "🚪", name: "Exhaust", game:[] },
-    { icon: "💥", name: "War", game:[] },
-    { icon: "🔫", name: "Arms", game:[] },
-    { icon: "🎨", name: "Paint", game:[] },
-    { icon: "💡", name: "Strategy", game:[] }, 
-    { icon: "⚽", name: "Soccer", game:[] }
-];
+// 1. Importa desde game-category.js
+import { categorias } from '../game-category/game-category.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const contenedor = document.getElementById("sidebar-container"); // donde lo coloca.
+    const contenedor = document.getElementById("sidebar-container");
+    const body = document.body;
 
-    if (!contenedor) {
-        console.error("Error: El contenedor con id 'sidebar-container' no se encontró en el DOM.");
-        return;
-    }
+    const menuButton = document.querySelector('.header-menu-btn');
+    const sidebar = document.querySelector('.sidebar');
 
+   
+    if (!contenedor) return; 
+
+    // 1. Carga del template.
     fetch("/TP2/components/sidebar/sidebar-template.html")
         .then(res => {
-            if (!res.ok) throw new Error(`Error al cargar el template: ${res.statusText} (${res.status})`);
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
             return res.text();
         })
         .then(html => {
@@ -40,28 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const template = doc.getElementById("sidebar-template");
 
             if (!template) {
-                console.error("Error: No se encontró el <template> con id 'sidebar-template'.");
-                return;
+                console.error("Error: 'sidebar-template' not found in the loaded HTML.");
+                return; 
             }
 
-            // Clona el sidebar
+            // Clona todo el sidebar.
             const clone = template.content.cloneNode(true);
             contenedor.appendChild(clone);
 
-            // Insertar categorías dinámicamente
-            const categoriesList = contenedor.querySelector("#categories");
-            const categoryTemplate = contenedor.querySelector("#category-item");
+            
+            // 2. Inyección del contenido de categorías.
+            const categoriesList = contenedor.querySelector("#categories-sidebar");
+            const categoryTemplate = contenedor.querySelector("#category-item"); 
 
             if (categoriesList && categoryTemplate) {
+                
                 categorias.forEach(cat => {
                     const cloneCat = categoryTemplate.content.cloneNode(true);
+                    
+                    const listItem = cloneCat.querySelector("li");
                     const iconElement = cloneCat.querySelector(".icon");
                     const nameElement = cloneCat.querySelector(".category-name");
 
+                    // Data.
                     if (iconElement) iconElement.textContent = cat.icon || '❓';
                     if (nameElement) nameElement.textContent = cat.name;
 
-                    const listItem = cloneCat.querySelector("li");
+                    // Asignación de atributos.
                     if (listItem) {
                         listItem.classList.add('sidebar-list-item');
                         listItem.dataset.category = cat.name;
@@ -69,7 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     categoriesList.appendChild(cloneCat);
                 });
+            } else {
+                 console.warn("Warning: Could not find #categories-sidebar or #category-item template.");
             }
+
 
             // Funcionalidad del botón desplegable
             const menuButton = document.querySelector('.header-menu-btn');
@@ -84,5 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         })
-        .catch(err => console.error("Error cargando el template:", err));
 });

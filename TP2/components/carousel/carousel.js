@@ -38,6 +38,10 @@ window.new_Carousel = ({ games, category, quantity = 14, extraClasses = "" }) =>
     const img = itemClone.querySelector("img")
     const title = itemClone.querySelector("h3")
     link.href = game.link
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      loadPage("gameplay.html");
+    })
     img.src = game.image
     img.alt = game.title
     title.textContent = game.title

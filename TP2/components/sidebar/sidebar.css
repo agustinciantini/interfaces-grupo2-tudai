@@ -1,8 +1,3 @@
-body {
-    margin: 0;
-    font-family: 'Jandi', sans-serif;
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -16,15 +11,14 @@ body {
 
 .sidebar {
     background-image: linear-gradient(to bottom, var(--primary-600), var(--primary-700));
-    /* cuando se remueve el position, se rompe la pagina. Cuando está colocado se mueve todo el carrusel. */
-    /* position: absolute; */
+    position: absolute;
     top: 51px;
     height: 100vh;
     z-index: 1000;
     width: 50px;
     padding: 15px 0;
-    overflow-x: hidden;
     transition: width 0.3s ease-in-out;
+    overflow-x: hidden; 
 }
 .sidebar::-webkit-scrollbar{
     display: none; 
@@ -89,7 +83,7 @@ body {
 }
 
 .sidebar-list-item:hover {
-    background-image: linear-gradient(to top, #969696, var(--primary-700));
+    background-image: linear-gradient(to top, var(--primary-300), var(--primary-700));
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(54, 96, 146, 0.9);
     cursor: pointer;
@@ -112,8 +106,4 @@ body {
     height: 1px;
     background: linear-gradient(to right, transparent, #777, transparent);
     margin: 15px 0;
-}
-
-body.menu-open {
-    overflow: hidden;
 }

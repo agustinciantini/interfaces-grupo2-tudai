@@ -1,15 +1,9 @@
-body {
-  font-family: 'Jandi', sans-serif;
+.register-container {
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
-.container {
-  padding: 20px;
-}
+.register-container { padding: 20px; }
 
 .form-container {
   width: 350px;
@@ -28,13 +22,13 @@ body {
   margin-bottom: 20px;
 }
 
-.logo {
+.logo-login {
   width: 60px;
   height: 60px;
   padding: 5px;
 }
 
-.title {
+.register-title {
   font-size: 2em;
   font-weight: 600;
   background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%, #66797B 50%, #C0392B 80%, #E74C3C 100%);

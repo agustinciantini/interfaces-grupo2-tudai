@@ -1,13 +1,19 @@
-body {
-  font-family: 'Jandi', sans-serif;
+.login-container {
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
-.container { padding: 20px; }
+/* .login-container { padding: 20px; } */
+
+.login-container {
+ font-family: 'Jandi', sans-serif;
+ color: #fff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: calc(100vh - 200px); /* resta header y footer aprox */
+ padding: 20px;
+}
 
 .form-container {
   width: 350px;
@@ -26,9 +32,9 @@ body {
   margin-bottom: 20px;
 }
 
-.logo { width: 60px; height: 60px; padding: 5px; }
+.logo-login { width: 60px; height: 60px; padding: 5px; }
 
-.title {
+.login-title {
   font-size: 2em;
   font-weight: 600;
   background-image: linear-gradient(to right, #1ABC9C 0%, #16A085 20%,#66797B 50%,#C0392B 80%,#E74C3C 100%);
