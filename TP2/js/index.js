@@ -11,7 +11,6 @@ const container = document.getElementById("container");
 // función que carga un html dentro del contenedor
 // function loadPage(page, addToHistory = true) {
 function loadPage(page) {
-    console.log("Page: ", page);
     fetch(`${page}`)
         .then(res => res.text())
         .then(html => {
@@ -25,7 +24,6 @@ function loadPage(page) {
 
             // después de cargar, engancho los eventos de esa página
             setupEvents(page);
-            console.log("Page despuesss: ", page);
 
             // Cambiar la URL sin recargar
             // if (addToHistory) {
@@ -37,10 +35,11 @@ function loadPage(page) {
 // seteo los eventos según la página actual
 function setupEvents(page) {
     if (page === "login.html") {
-        console.log("111");
         const registerLink = container.querySelector(".go-to-register");
         const loginBtn = container.querySelector(".login-button");
-        // const background = document.querySelector(".grid-game");
+        const background = document.querySelector(".game-grid");
+        console.log(background);
+        // const fragmentoDeTemplate = templateElemento.content; 
 
         if (registerLink) {
             registerLink.addEventListener("click", () => loadPage("register.html"));
@@ -50,27 +49,27 @@ function setupEvents(page) {
             loginBtn.addEventListener("click", () => loadPage("loading.html"));
         }
 
-//         if (background) {
-//             loginBtn.addEventListener("click", () => loadPage("../components/background/background-template.html"));
-//         }
-// }
+        /*if (background) {
+            // Verifica que el fragmento exista antes de clonar
+            if (fragmentoDeTemplate) { 
+                const clon = fragmentoDeTemplate.cloneNode(true); 
+                background.appendChild(clon);
+            }
+        }*/
         
         if (typeof initValidation === "function") {
-            console.log("Antes de init loginnn");
             initValidation(container); // engancho la lógica del js de login
         }
         
     }
 
     if(page =="loading.html"){
-        console.log("222");
         if (typeof initLoading === "function") {
             initLoading(container); // engancho la lógica del js de loading
         }
     }
 
     if (page === "register.html") {
-        console.log("3333");
         const backToLogin = container.querySelector(".go-to-login");
         if (backToLogin) {
             backToLogin.addEventListener("click", () => loadPage("login.html"));
@@ -82,7 +81,6 @@ function setupEvents(page) {
     }
 
     if (page === "home.html") {
-        console.log("444");
         const playBtn = container.querySelector(".play-peg-solitaire");
         if (playBtn) {
             playBtn.addEventListener("click", () => loadPage("gameplay.html"));
@@ -95,7 +93,6 @@ function setupEvents(page) {
     }
 
     if (page === "gameplay.html") {
-        console.log("5555");
         const returnHome = container.querySelector(".return-home");
         if (returnHome) {
             returnHome.addEventListener("click", () => loadPage("home.html"));
