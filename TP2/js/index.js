@@ -50,8 +50,8 @@ function setupEvents(page) {
     if (page === "login.html") {
         const registerLink = container.querySelector(".go-to-register");
         const loginBtn = container.querySelector(".login-button");
-        const background = document.querySelector(".game-grid");
-        console.log(background);
+        // const background = document.querySelector(".game-grid");
+        // console.log(background);
         // const fragmentoDeTemplate = templateElemento.content; 
 
         if (registerLink) {
