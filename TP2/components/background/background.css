@@ -44,7 +44,7 @@
   z-index: -1;
 }
 
-.game-card {
+.game-card-bg {
   width: 90px;
   height: 90px;
   border-radius: 18px;
@@ -56,7 +56,7 @@
   padding: 15px;
 }
 
-.game-card img {
+.game-card-bg img {
   width: 100%;
   height: 100%;
   border-radius: 18px;
