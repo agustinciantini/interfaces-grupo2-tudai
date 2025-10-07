@@ -5,6 +5,7 @@
 // loadPage(currentPage);
 loadPage("login.html");
 
+// contenedor principal donde se cargan las páginas
 const container = document.getElementById("container");
 
 // función que carga un html dentro del contenedor
@@ -33,13 +34,13 @@ function loadPage(page) {
         })
 }
 
-
 // seteo los eventos según la página actual
 function setupEvents(page) {
     if (page === "login.html") {
         console.log("111");
         const registerLink = container.querySelector(".go-to-register");
         const loginBtn = container.querySelector(".login-button");
+        // const background = document.querySelector(".grid-game");
 
         if (registerLink) {
             registerLink.addEventListener("click", () => loadPage("register.html"));
@@ -49,10 +50,16 @@ function setupEvents(page) {
             loginBtn.addEventListener("click", () => loadPage("loading.html"));
         }
 
+//         if (background) {
+//             loginBtn.addEventListener("click", () => loadPage("../components/background/background-template.html"));
+//         }
+// }
+        
         if (typeof initValidation === "function") {
             console.log("Antes de init loginnn");
             initValidation(container); // engancho la lógica del js de login
         }
+        
     }
 
     if(page =="loading.html"){
@@ -99,7 +106,6 @@ function setupEvents(page) {
         }
     }
 }
-
 // Manejo de back/forward
 // window.addEventListener("popstate", (event) => {    //escucha cuando el usuario toca atrás/adelante, y vuelve a cargar la vista correspondiente desde event.state.page.
 //     if (event.state && event.state.page) {
@@ -108,6 +114,3 @@ function setupEvents(page) {
 //         loadPage("login.html", false); // estado inicial
 //     }
 // });
-
-
- 

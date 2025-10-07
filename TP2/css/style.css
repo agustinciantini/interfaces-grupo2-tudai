@@ -86,6 +86,8 @@ body.body-index {
 } */
 
 #container {
+  background: url('../images/background-login.png') no-repeat center center;
+  background-size: cover;
   flex: 1;
   display: flex;
   justify-content: center;
