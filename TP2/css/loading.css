@@ -265,7 +265,7 @@
 
 
 .particle-1.curtain-left, .particle-3.curtain-left, .particle-6.curtain-left, .particle-9.curtain-left, .particle-10.curtain-left{
-    animation: curtain-left 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation: curtain-left 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes curtain-left {
@@ -274,12 +274,12 @@
     }
 
     100% {
-        transform: translateX(-600px) scale(0.3);
+        transform: translateX(-1000px) scale(0.3);
     }
 }
 
 .particle-2.curtain-right, .particle-4.curtain-right, .particle-5.curtain-right, .particle-7.curtain-right, .particle-8.curtain-right {
-    animation: curtain-right 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation: curtain-right 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes curtain-right {
@@ -288,6 +288,6 @@
     }
 
     100% {
-        transform: translateX(750px) scale(0.3);
+        transform: translateX(1000px) scale(0.3);
     }
 }

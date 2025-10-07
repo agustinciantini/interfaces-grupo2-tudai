@@ -5,13 +5,17 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding-bottom: 30px;
-    
+    padding: 35px 150px 35px 150px;
+    /* gap: 50px; */
 }
 
 .logo-info-section {
-    flex: 2;
-    min-width: 280px;
+    /* flex: 2; */
+    /* min-width: 280px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
     text-align: center;
 }
 
@@ -19,11 +23,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .logo-container img {
-    width: 60px;
+    width: 90px;
+    height: 90px;
     margin-right: 10px;
 }
 
@@ -49,9 +53,9 @@
     color: transparent;
 }
 
-.social-icons {
+/* .social-icons {
     margin-top: 15px;
-}
+} */
 
 .social-icons a {
     color: #fff;
@@ -67,13 +71,20 @@ color: #6d6d6d;
 
 /* SECCIÓN LINKS */
 
-.links-section {
-    flex: 1;
-    min-width: 150px;
+.links-section-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: left;
+    align-items: flex-start;
+    gap: 70px;
+}
+
+.links-section {
+    /* flex: 1; */
+    /* min-width: 150px; */
     gap: 10px;
+    width: fit-content;
+    height: fit-content;
 }
 
 .links-section h4 {
@@ -106,8 +117,8 @@ color: #6d6d6d;
 
 .scroll-to-top {
     position: absolute; 
-    bottom: 10px;
-    right: 10px;
+    bottom: 50px;
+    right: 40px;
     height: 25px;
     transform: translateY(-50%);
     z-index: 1000;
