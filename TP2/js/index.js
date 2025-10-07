@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPage("login.html");
 });
 
+// contenedor principal donde se cargan las páginas
 const container = document.getElementById("container");
 
 export function loadPage(page) {
+
+// función que carga un html dentro del contenedor
+// function loadPage(page, addToHistory = true) {
     fetch(`${page}`)
         .then(res => res.text())
         .then(html => {
@@ -16,7 +20,6 @@ export function loadPage(page) {
             setupEvents(page);  // después de cargar, engancho los eventos de esa página
         })
 }
-
 
 // seteo los eventos según la página actual
 function setupEvents(page) {
@@ -47,6 +50,9 @@ function setupEvents(page) {
     if (page === "login.html") {
         const registerLink = container.querySelector(".go-to-register");
         const loginBtn = container.querySelector(".login-button");
+        const background = document.querySelector(".game-grid");
+        console.log(background);
+        // const fragmentoDeTemplate = templateElemento.content; 
 
         if (registerLink) {
             registerLink.addEventListener("click", () => loadPage("register.html"));
@@ -56,9 +62,18 @@ function setupEvents(page) {
             loginBtn.addEventListener("click", () => loadPage("loading.html"));
         }
 
+        /*if (background) {
+            // Verifica que el fragmento exista antes de clonar
+            if (fragmentoDeTemplate) { 
+                const clon = fragmentoDeTemplate.cloneNode(true); 
+                background.appendChild(clon);
+            }
+        }*/
+        
         if (typeof initValidation === "function") {
             initValidation(container); // engancho la lógica del js de login
         }
+
             
     }
 

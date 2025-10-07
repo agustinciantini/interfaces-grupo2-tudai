@@ -19,7 +19,9 @@
     padding: 15px 0;
     transition: width 0.3s ease-in-out;
 }
-
+.sidebar::-webkit-scrollbar{
+    display: none; 
+}
 .sidebar-title,
 .sidebar-list-item span:not(.icon) {
     display: none;
