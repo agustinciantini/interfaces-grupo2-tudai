@@ -48,7 +48,7 @@ label {
   display: block;
   font-size: 0.9em;
   margin-bottom: 5px;
-  color: #ccc;
+  color: var(--primary-700);
 }
 
 input[type="text"], input[type="password"] {

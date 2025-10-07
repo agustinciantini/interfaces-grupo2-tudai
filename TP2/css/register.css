@@ -23,8 +23,8 @@
 }
 
 .logo-login {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   padding: 5px;
 }
 
@@ -80,11 +80,12 @@ input:focus {
   right: 15px;
   transform: translateY(-50%);
   color: var(--grey-400);
+  cursor: pointer;
 }
 
 .help-text {
   font-size: 0.7em;
-  color: #b6b6b6;
+  color: #fff;
   margin: 5px 0 15px;
 }
 
@@ -219,7 +220,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #cfcfcf;
+    background: #ffffff;
     border-radius: 5px;
     padding: 10px;
     margin: 20px 0;

@@ -1,54 +1,46 @@
-
-function initHome(container){
-
-  console.log("CONTAINER homeeee", container);
-  async function loadTemplates() {
+async function loadTemplates() {
     const [carouselHTML] = await Promise.all([
       fetch("components/carousel/carousel.html").then(r => r.text()),
       
     ]);
     document.body.insertAdjacentHTML("beforeend", carouselHTML);
     
+}
+
+// Cargar listado de juegos desde games.json
+async function loadGamesData() {
+  const data = await fetch("games.json").then(r => r.json());
+  return data;
+}
+  
+  
+// Transforma archivos en objetos {title,image,link}
+function buildGameList(category, files, quantity) {
+  if (!Array.isArray(files)) {
+    console.warn(`⚠️ No se encontraron archivos para la categoría "${category}"`);
+    return [];
   }
-  
-  // async function loadHome() {
-  //   const homeHTML = await fetch("home.html").then(r => r.text());
-  //   container.querySelector("#container").innerHTML = homeHTML;
-  // }
-  
-  // Cargar listado de juegos desde games.json
-  async function loadGamesData() {
-    const data = await fetch("games.json").then(r => r.json());
-    return data;
-  }
-  
-  
-  // Transforma archivos en objetos {title,image,link}
-  function buildGameList(category, files, quantity) {
-    if (!Array.isArray(files)) {
-      console.warn(`⚠️ No se encontraron archivos para la categoría "${category}"`);
-      return [];
-    }
-  
-    return files.slice(0, quantity).map(filename => {
-      const title = filename.substring(0, filename.lastIndexOf(".")) || filename;
-      return {
-        title,
-        image: `images/games/${category}/${filename}`,
-        // link: `gameplay.html?game=${title}`,
-        link: '#',
-        category: [category]
-      };
-    });
-  }
-  
+
+  return files.slice(0, quantity).map(filename => {
+    const title = filename.substring(0, filename.lastIndexOf(".")) || filename;
+    return {
+      title,
+      image: `images/games/${category}/${filename}`,
+      // link: `gameplay.html?game=${title}`,
+      link: '#',
+      category: [category]
+    };
+  });
+}
+
+
+function initHome(container){
+
   // Flujo principal de Home.html
-  // Promise.all([loadTemplates(), loadHome(), loadGamesData()])
   Promise.all([loadTemplates(), loadGamesData()])
     .then(([_, gamesData]) => {
       // 🎯 featured
       const featuredGames = buildGameList("cars", gamesData["cars"], 32); // ejemplo: tomo 1 de action
-      // console.log("AVERRR", featuredGames);
       const featuredCarousel = new_Carousel({
         games: featuredGames,
         category: "cars",
@@ -92,16 +84,9 @@ function initHome(container){
         quantity: 32
       });
       container.querySelector("#action-carousele").appendChild(actionCarousel);
-  
-      // 🎯 Disparos
-      // const shooterGames = buildGameList("shooter", gamesData["shooter"], 32);
-      // const shooterCarousel = new_Carousel({
-      //   games: shooterGames,
-      //   category: "shooter",
-      //   quantity: 32
-      // });
-      // container.querySelector("#shooter-carousele").appendChild(shooterCarousel);
     });
+
+
 
 }
 

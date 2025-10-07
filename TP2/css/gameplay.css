@@ -87,27 +87,23 @@
     width: 928px;
     height: 617px;
     padding: 0px;
+    object-fit: cover;
+    box-sizing: border-box;
 }
 
-#game-preview img{
-    width: 100%;
-    height: 100%;
-
+.game-preview-image, .button-play-gameplay {
     object-fit: cover; 
     display: block;
 }
 
+.game-preview-image{
+    width: 100%;
+    height: 100%;
+}
 
-@keyframes glow-pulse {
-    0%, 100% {
-        
-        box-shadow: 0 0 8px 0 var(--accent-700);
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        box-shadow: 0 0 30px 5px var(--accent-700);
-        transform: translate(-50%, -50%) scale(1.02);
-    }
+.button-play-gameplay {
+    width: 24px;
+    height: 24px;
 }
 
 .button-game-running {
@@ -115,6 +111,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     display: flex;
     width: 117px;
     height: 43px;
@@ -122,6 +119,7 @@
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
+
     background-color: var(--accent-700); 
     box-shadow: 0px 0px 8px 0px var(--accent-700);
     cursor: pointer;
@@ -131,11 +129,22 @@
 .button-game-running:hover {
     animation: glow-pulse 1.2s ease-in-out infinite;
 }
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px 0 var(--accent-700);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px 5px var(--accent-700);
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
 
 .button-game-running p {
-    width: fit-content;
-    height: fit-content;
-    margin: 0px;
+    position: absolute;
+    top: 20%;
+    left: 45%;
+
     font-size: var(--font-size-large);
     color: white; 
     transition: color 0.6s;
@@ -375,6 +384,54 @@ button.active {
 .interactions:fullscreen {
     object-fit: cover;
 }
+
+/* --------------------------------------------- Breadcrumbs ---------------------------------------- */
+
+.breadcrumbs-gameplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+    gap: 5px;
+}
+
+.breadcrumbs-gameplay > * {
+  display: inline-flex;
+  align-items: center;
+}
+
+.retun-home-gameplay {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.breadcrumbs-gameplay p {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.breadcrumb-right {
+    color: var(--secondary-200);
+    width: 14px;
+    height: 14px;
+    font-size: var(--font-size-small);
+    margin: 0 -3px;
+}
+
+.breadcrumb-right-container {
+    display: flex;
+    margin: 0 0 0 3px;
+}
+
+.breadcrumb-right-container > * {
+  display: inline-flex;
+  align-items: center;
+}
+
 
 /* --------------------------------------------- Informacion del Juego ---------------------------------------- */
 .game-infomation-container{
@@ -677,13 +734,26 @@ button.active {
 /* ------------------------------------------- Juegos adicionales --------------------------------------------- */
 
 .recommended-games{
-    background-color: var(--primary-600);
-    width: 100%;
-    height: 1132px;
+    width: fit-content;
+    height: fit-content;
     padding: 30px;
     border-radius: 15px;
-    box-sizing: border-box;
+    background-color: var(--primary-600);
 }
+
+.images-recommended-games-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.images-recommended-games-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
 
 
 /* ----------------------------------------------- Tweets ----------------------------------------------- */

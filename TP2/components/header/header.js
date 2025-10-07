@@ -1,6 +1,7 @@
 "use strict";
 
-// function initHeader(container){
+import { loadPage } from "../../js/index.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
     const header = document.querySelector(".header-index");
 
@@ -12,9 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             return res.text();
         })
         .then(html => {
-            // const temp = document.createElement("div");
-            // temp.innerHTML = html.trim();
-
+            
             header.innerHTML = html;
                 
             const template = document.getElementById("header-template");
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             header.appendChild(clone);
 
             const returnHome = document.querySelector(".header-logo");
-            console.log("Ancorr header", returnHome);
             returnHome.addEventListener("click", () => {
                 loadPage("home.html");
             });

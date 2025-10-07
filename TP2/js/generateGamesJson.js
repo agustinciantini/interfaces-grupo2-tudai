@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const baseDir = path.join(__dirname, "images/games");
+const baseDir = path.join(__dirname, "../images/games");
 const categories = fs.readdirSync(baseDir);
 const result = {};
 

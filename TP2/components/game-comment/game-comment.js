@@ -25,8 +25,6 @@ function initComments(container) {
             const temp = document.createElement("div");
             
             temp.innerHTML = html;
-            // container.body.appendChild(temp.firstElementChild); // añade el <template> al body
-            // document.body.appendChild(temp.firstElementChild); // añade el <template> al body
             container.appendChild(temp.firstElementChild);
     
             const template = container.querySelector("#comment-template");
@@ -39,7 +37,7 @@ function initComments(container) {
                 const text = input.value.trim();
                 if (text !== "") {
                     const newComment = {
-                        nameUser: "UsuarioRandom", 
+                        nameUser: "Random-222", 
                         publicationDay: getCurrentDate(),
                         likes: 0,
                         description: text
