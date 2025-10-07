@@ -47,9 +47,10 @@ function initHome(container){
   Promise.all([loadTemplates(), loadGamesData()])
     .then(([_, gamesData]) => {
       // 🎯 featured
+            console.log("JUEGOS", gamesData);
       const featuredGames = buildGameList("cars", gamesData["cars"], 32); // ejemplo: tomo 1 de action
-      // console.log("AVERRR", featuredGames);
-      const featuredCarousel = new_Carousel({
+      console.log("AVERRR", featuredGames);
+      const featuredCarousel = new_FeaturedCarousel({
         games: featuredGames,
         category: "cars",
         type: "featured",
