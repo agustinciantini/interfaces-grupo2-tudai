@@ -26,6 +26,10 @@
     gap: 12px;
 }
 
+.header-logo {
+    gap: 5px;
+}
+
 .header-right{
     display: flex;
     justify-content: center;
@@ -44,10 +48,7 @@
 
 .header-icon {
     font-size: 5px;
-    /* margin: 0 10px; */
     display: inline-flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     width: 100%;
     height: 100%;
 }
@@ -55,6 +56,7 @@
 .header-menu-btn {
     background: none;
     color: inherit;
+    display: block;
 }
 
 .header-icon-link,
@@ -75,7 +77,6 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    margin-right: 6px;
 }
 
 .header-logo-text {
@@ -86,12 +87,12 @@
     color: transparent;
 }
 
-.header-logo::before {
+.header-menu-btn::after {
     content: '|';
     color: white;
     opacity: .7;
     font-size: 1.2rem;
-    margin-right: 12px;
+    margin-left: 5px;
 }
 
 /* SEARCH BAR */

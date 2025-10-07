@@ -1,5 +1,7 @@
+import { initCategoriesGameplay } from "../components/game-category/game-category.js";
+import { loadPage } from "./index.js";
 
-function initGameplay(container) {
+export function initGameplay(container) {
     // Jugar 
     const playGameBtn = container.querySelector(".button-game-running");
     playGameBtn.addEventListener("click", function() {
@@ -83,11 +85,47 @@ function initGameplay(container) {
         }
     });
 
+    const returnHome = container.querySelector(".retun-home-gameplay");
+    returnHome.addEventListener("click", () => {
+        loadPage("home.html");
+    });
+
+
+    // -------------------------Recommended Games---------------------------
+    function loadStrategyGames() {
+        loadGamesData()
+        .then(data => {
+            const strategyGames = buildGameList("strategy", data["strategy"], 28);
+            renderStrategyGames(strategyGames);
+        })
+        .catch(error => {
+            console.error("Error al cargar los juegos:", error);
+        });
+    }
+
+    function renderStrategyGames(games) {
+        const containerRecommended = container.querySelector(".images-recommended-games-container");
+        containerRecommended.innerHTML = "";
+
+        games.forEach(game => {
+            const img = document.createElement("img");
+            img.src = game.image;
+            img.alt = game.title;
+            containerRecommended.appendChild(img);
+        });
+    }
+    
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {loadStrategyGames(); });
+    }else {
+        loadStrategyGames();
+    }
+
+
     initCategoriesGameplay(container);
     initComments(container);
     initTweets(container);
 }
-
 
 
 

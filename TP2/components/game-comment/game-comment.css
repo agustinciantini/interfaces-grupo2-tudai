@@ -11,6 +11,12 @@
     box-sizing: border-box;
 }
 
+.divider-comment {
+    height: 1px;
+    background-color: var(--secondary-200);
+    width: 100%;
+}
+
 .information-comment {
     display: flex;
     align-items: center;
@@ -79,10 +85,6 @@
     font-size: var(--font-size-tiny);
 }
 
-/* .number-of-likes {
-    display: block;
-} */
-
 .post-description {
     display: flex;
     justify-content: space-between;
@@ -98,8 +100,6 @@
     background: none;
     font-size: var(--font-size-small);
 
-    /* width: 100%;
-    height: fit-content; */
     word-break: break-word;    /* corta palabras largas */
 }
 

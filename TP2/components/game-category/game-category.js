@@ -84,7 +84,7 @@ function initCategoriesSidebar(container) {
         });
 }
     
-
+export { initCategoriesGameplay, initCategoriesSidebar };
 
 
 

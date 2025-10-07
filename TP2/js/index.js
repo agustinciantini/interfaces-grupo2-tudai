@@ -1,45 +1,58 @@
 "use strict";
+import { initGameplay } from "./gameplay.js";
+import { initLoading } from "./loading.js";
 
-// const params = new URLSearchParams(window.location.search);
-// const currentPage = params.get("page") || "login.html";
-// loadPage(currentPage);
-loadPage("login.html");
+document.addEventListener("DOMContentLoaded", () => {
+    loadPage("login.html");
+});
 
+// contenedor principal donde se cargan las páginas
 const container = document.getElementById("container");
+
+export function loadPage(page) {
 
 // función que carga un html dentro del contenedor
 // function loadPage(page, addToHistory = true) {
-function loadPage(page) {
-    console.log("Page: ", page);
     fetch(`${page}`)
         .then(res => res.text())
         .then(html => {
-            // document.querySelector("#container_main").innerHTML = texto;
-            // document.getElementById("container").innerHTML = html;
             container.innerHTML = html;
-
-            // if (typeof initHeader === "function") initHeader(container);
-            // if (typeof initFooter === "function") initFooter(container);
-            // if (typeof initSidebar === "function") initSidebar(container);
-
-            // después de cargar, engancho los eventos de esa página
-            setupEvents(page);
-            console.log("Page despuesss: ", page);
-
-            // Cambiar la URL sin recargar
-            // if (addToHistory) {
-            //     history.pushState({ page }, "", `?page=${page}`);
-            // }
+            setupEvents(page);  // después de cargar, engancho los eventos de esa página
         })
 }
 
-
 // seteo los eventos según la página actual
 function setupEvents(page) {
+    const sidebar = document.getElementById("sidebar-container");
+    const hamburgerMenuLogin = document.querySelector(".header-menu-btn");
+    const headerLogo = document.querySelector(".header-logo");
+
+    if (["login.html", "register.html", "loading.html"].includes(page)) {
+        if (sidebar) sidebar.style.display = "none";
+        if (hamburgerMenuLogin) hamburgerMenuLogin.style.display = "none";
+        
+        if (headerLogo) {
+            headerLogo.style.pointerEvents = "none"; // Desactiva clics
+            headerLogo.style.cursor = "default";     // Cambia el cursor
+        }
+    }else {
+        if (sidebar) sidebar.style.display = "block";
+        if (hamburgerMenuLogin) hamburgerMenuLogin.style.display = "block";
+        
+        if (headerLogo) {
+            headerLogo.style.pointerEvents = "auto"; // Reactiva clics
+            headerLogo.style.cursor = "pointer";
+            headerLogo.addEventListener("click", () => loadPage("home.html"));
+        }
+    }
+
+
     if (page === "login.html") {
-        console.log("111");
         const registerLink = container.querySelector(".go-to-register");
         const loginBtn = container.querySelector(".login-button");
+        // const background = document.querySelector(".game-grid");
+        // console.log(background);
+        // const fragmentoDeTemplate = templateElemento.content; 
 
         if (registerLink) {
             registerLink.addEventListener("click", () => loadPage("register.html"));
@@ -49,24 +62,33 @@ function setupEvents(page) {
             loginBtn.addEventListener("click", () => loadPage("loading.html"));
         }
 
+        /*if (background) {
+            // Verifica que el fragmento exista antes de clonar
+            if (fragmentoDeTemplate) { 
+                const clon = fragmentoDeTemplate.cloneNode(true); 
+                background.appendChild(clon);
+            }
+        }*/
+        
         if (typeof initValidation === "function") {
-            console.log("Antes de init loginnn");
             initValidation(container); // engancho la lógica del js de login
         }
+
+            
     }
 
     if(page =="loading.html"){
-        console.log("222");
         if (typeof initLoading === "function") {
             initLoading(container); // engancho la lógica del js de loading
         }
     }
 
     if (page === "register.html") {
-        console.log("3333");
-        const backToLogin = container.querySelector(".go-to-login");
+        const backToLogin = container.querySelectorAll(".go-to-login");
         if (backToLogin) {
-            backToLogin.addEventListener("click", () => loadPage("login.html"));
+            backToLogin.forEach(element => {
+                element.addEventListener("click", () => loadPage("login.html"));
+            });
         }
 
         if (typeof initValidation === "function") {
@@ -75,20 +97,17 @@ function setupEvents(page) {
     }
 
     if (page === "home.html") {
-        console.log("444");
         const playBtn = container.querySelector(".play-peg-solitaire");
         if (playBtn) {
             playBtn.addEventListener("click", () => loadPage("gameplay.html"));
         }
 
         if (typeof initHome === "function") {
-            console.log("antes de init HOMEe");
             initHome(container); // engancho la lógica del js de home
         }
     }
 
     if (page === "gameplay.html") {
-        console.log("5555");
         const returnHome = container.querySelector(".return-home");
         if (returnHome) {
             returnHome.addEventListener("click", () => loadPage("home.html"));
@@ -99,15 +118,6 @@ function setupEvents(page) {
         }
     }
 }
-
-// Manejo de back/forward
-// window.addEventListener("popstate", (event) => {    //escucha cuando el usuario toca atrás/adelante, y vuelve a cargar la vista correspondiente desde event.state.page.
-//     if (event.state && event.state.page) {
-//         loadPage(event.state.page, false); // no volver a hacer pushState
-//     } else {
-//         loadPage("login.html", false); // estado inicial
-//     }
-// });
 
 
  

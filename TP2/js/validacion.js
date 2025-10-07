@@ -1,8 +1,6 @@
 "use strict";
 
 function initValidation(container) {
-    console.log("AVERR", container);
-    // container.addEventListener('DOMContentLoaded', function() {
         const form = container.querySelector('#registration-form');
     
         const inputs = [
@@ -121,6 +119,5 @@ function initValidation(container) {
         
             });
         }
-    // });
 
 }

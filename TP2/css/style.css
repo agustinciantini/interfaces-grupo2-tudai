@@ -74,16 +74,13 @@ body.body-index {
   z-index: 100;
 }
 
-#main-container {   /* Main ocupa todo el espacio intermedio */
+#main-container {   
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 48px;
 }
-
-/* #sidebar-container {   
-  flex-shrink: 0;
-} */
 
 #container {
   flex: 1;
@@ -110,10 +107,6 @@ footer.footer-index {
   color: #ccc;
 }
 
-/* html, body {
-    height: 100%;
-} */
-
 .logo-name {
     font-size: var(--font-size-large);
     font-family: var(--font-base);
@@ -126,9 +119,5 @@ footer.footer-index {
     margin: 0;
 }
 
-/* .body-index{
-    display: flex;
-    flex-direction: column;
-} */
 
 

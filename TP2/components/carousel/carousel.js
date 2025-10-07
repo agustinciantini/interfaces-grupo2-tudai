@@ -1,3 +1,5 @@
+import { loadPage } from "../../js/index.js";
+
 // precarga de templates
 async function loadTemplates() {
   const [carouselHTML, imagesHTML] = await Promise.all([
