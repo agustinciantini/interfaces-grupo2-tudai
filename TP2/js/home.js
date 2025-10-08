@@ -40,9 +40,7 @@ function initHome(container){
   Promise.all([loadTemplates(), loadGamesData()])
     .then(([_, gamesData]) => {
       // 🎯 featured
-            console.log("JUEGOS", gamesData);
       const featuredGames = buildGameList("cars", gamesData["cars"], 32); // ejemplo: tomo 1 de action
-      console.log("AVERRR", featuredGames);
       const featuredCarousel = new_FeaturedCarousel({
         games: featuredGames,
         category: "cars",
@@ -86,9 +84,39 @@ function initHome(container){
         quantity: 32
       });
       container.querySelector("#action-carousele").appendChild(actionCarousel);
+
+
+
+
+
+      // ------------- Imagenes de "Lo mas preferido por la comunidad" ------------------
+      let allGames = [];
+      for (const category in gamesData) {
+        const gamesFromCategory = buildGameList(category, gamesData[category], gamesData[category].length);
+        allGames = allGames.concat(gamesFromCategory);
+      }
+
+      allGames.sort(() => Math.random() - 0.5);
+      const selectedGames = allGames.slice(0, 7);
+
+      renderMostLiked(container, selectedGames);
+
+
+      // Inserta las imágenes en el contenedor
+      function renderMostLiked(container, games) {
+        const grid = container.querySelector(".img-recommended-community");
+        if (!grid) return;
+        
+        grid.innerHTML = "";
+        
+        games.forEach(game => {
+          const img = document.createElement("img");
+          img.src = game.image;
+          img.alt = game.title;
+          grid.appendChild(img);
+        });
+      }
     });
-
-
 
 }
 

@@ -26,24 +26,38 @@ function setupEvents(page) {
     const sidebar = document.getElementById("sidebar-container");
     const hamburgerMenuLogin = document.querySelector(".header-menu-btn");
     const headerLogo = document.querySelector(".header-logo");
+    const userIconHeader = document.querySelector(".header-user");
+    const profileCard = document.querySelector(".profile-card");
 
     if (["login.html", "register.html", "loading.html"].includes(page)) {
         if (sidebar) sidebar.style.display = "none";
         if (hamburgerMenuLogin) hamburgerMenuLogin.style.display = "none";
-        
         if (headerLogo) {
             headerLogo.style.pointerEvents = "none"; // Desactiva clics
             headerLogo.style.cursor = "default";     // Cambia el cursor
         }
+        if(userIconHeader) {
+            userIconHeader.style.display = "none";
+            if (profileCard && profileCard.classList.contains("active")) {
+                profileCard.classList.remove("active");
+            }
+        }
     }else {
         if (sidebar) sidebar.style.display = "block";
         if (hamburgerMenuLogin) hamburgerMenuLogin.style.display = "block";
-        
         if (headerLogo) {
             headerLogo.style.pointerEvents = "auto"; // Reactiva clics
             headerLogo.style.cursor = "pointer";
             headerLogo.addEventListener("click", () => loadPage("home.html"));
         }
+        if(userIconHeader) userIconHeader.style.display = "block";
+    }
+
+    if (["home.html", "gameplay.html"].includes(page)) {
+        const closeSesion = document.querySelector(".close-sesion");
+        closeSesion.addEventListener("click", () =>{
+            loadPage("login.html");
+        });
     }
 
 

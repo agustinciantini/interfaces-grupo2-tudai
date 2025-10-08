@@ -37,11 +37,9 @@
 .img-recommended-community {
   display: grid;
   grid-template-columns: repeat(7, 1fr);;
-  gap: 5px;
-  overflow: hidden;
+  gap: 10px;
   min-height: 360px;
-  /* justify-content: center;
-  align-items: center; */
+  cursor: pointer;
 }
 
 .img-recommended-community img {
