@@ -30,8 +30,9 @@ window.new_Carousel = ({ games, category, quantity = 14, extraClasses = "" }) =>
   }
 
   
-  const filtered = games.filter((g) => g.category.includes(category)).slice(0, quantity)
-  // if(filtered ==="")
+  // const filtered = games.filter((g) => g.category.includes(category)).slice(0, quantity)
+  const filtered = games;
+ 
   filtered.forEach((game) => {
     const itemClone = itemTemplate.content.cloneNode(true)
     const link = itemClone.querySelector("a")
@@ -153,7 +154,8 @@ window.new_FeaturedCarousel = ({ games, category, quantity = 14 }) => {
     return
   }
 
-  const filtered = games.filter((g) => g.category.includes(category)).slice(0, quantity)
+  // const filtered = games.filter((g) => g.category.includes(category)).slice(0, quantity)
+  const filtered = games;
 
   let i = 0
   while (i < filtered.length) {
