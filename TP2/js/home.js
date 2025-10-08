@@ -68,7 +68,6 @@ function initHome(container){
         quantity: 14,
         tag: ""
       });
-      // console.log("featuress", featuredCarousel);
       container.querySelector("#carouseles-container-1").prepend(featuredCarousel);
   
       // 🎯 populares
@@ -82,6 +81,11 @@ function initHome(container){
         quantity: 15,
         tag: "popular"
       });
+
+      popularesCarousel.querySelectorAll(".tag-card-popular").forEach(card => {
+        card.classList.add("active");
+      });
+
       container.querySelector("#popular-carousele").appendChild(popularesCarousel);
   
       // 🎯 nuevos
@@ -95,6 +99,11 @@ function initHome(container){
         quantity: 15,
         tag: "nuevo"
       });
+
+      newCarousel.querySelectorAll(".tag-card-new").forEach(card => {
+        card.classList.add("active");
+      });
+
       container.querySelector("#new-carousele").appendChild(newCarousel);
   
       // 🎯 Aventuras
@@ -114,6 +123,15 @@ function initHome(container){
         quantity: 32
       });
       container.querySelector("#action-carousele").appendChild(actionCarousel);
+
+      // // 🎯 Disparos
+      // const actionGames = buildGameList("action", gamesData["action"], 32);
+      // const actionCarousel = new_Carousel({
+      //   games: actionGames,
+      //   category: "action",
+      //   quantity: 32
+      // });
+      // container.querySelector("#action-carousele").appendChild(actionCarousel);
 
 
 

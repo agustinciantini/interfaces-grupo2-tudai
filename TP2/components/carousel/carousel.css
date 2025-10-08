@@ -83,6 +83,44 @@
   transform: scale(1.1);
 }
 
+.tag-card-new {
+  position: absolute;
+  display: none;
+  top: -6px;
+  left: -2.5px;
+  width: 45px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--primary-100) 0%, var(--primary-300) 100%);
+}
+
+.tag-card-new.active {
+  display: block;
+}
+
+.tag-card-popular {
+  position: absolute;
+  display: none;
+  top: -6px;
+  left: -2.5px;
+  width: 45px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--accent-700) 0%, var(--red) 100%);
+}
+
+.tag-card-popular.active {
+  display: block;
+}
+
+.tag-name {
+  font-size: var(--font-size-small);
+}
+
+/* .tag-card-popular {
+
+} */
+
 .game-info {
   position: absolute;
   bottom: 0;
