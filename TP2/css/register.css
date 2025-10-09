@@ -57,6 +57,10 @@ label {
   margin-bottom: 5px;
 }
 
+.recaptcha-register {
+  color: var(--primary-700);
+}
+
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -66,7 +70,7 @@ input[type="password"] {
   font-size: 1em;
   color: #fff;
   border-radius: 8px;
-  border: 1px solid var(--grey-700);
+  border: 1px solid var(--grey-100);
   background: var(--primary-700);
   box-sizing: border-box;
 }

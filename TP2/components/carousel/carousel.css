@@ -59,7 +59,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.game-card:hover {
+.game-card:hover, 
+.most-liked-container img:hover {
   position: relative;
   transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -68,7 +69,8 @@
   border-radius: 10px;
 }
 
-.game-card img {
+.game-card img,
+.most-liked-container img{
   width: 100%;
   height: 100%;
   object-fit: cover; /* mantiene proporciones sin deformar */
@@ -80,6 +82,44 @@
   border-radius: 6px;
   transform: scale(1.1);
 }
+
+.tag-card-new {
+  position: absolute;
+  display: none;
+  top: -6px;
+  left: -2.5px;
+  width: 45px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--primary-100) 0%, var(--primary-300) 100%);
+}
+
+.tag-card-new.active {
+  display: block;
+}
+
+.tag-card-popular {
+  position: absolute;
+  display: none;
+  top: -6px;
+  left: -2.5px;
+  width: 45px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--accent-700) 0%, var(--red) 100%);
+}
+
+.tag-card-popular.active {
+  display: block;
+}
+
+.tag-name {
+  font-size: var(--font-size-small);
+}
+
+/* .tag-card-popular {
+
+} */
 
 .game-info {
   position: absolute;
@@ -241,13 +281,9 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.carousel {
-  overflow: hidden;
-  position: relative;
+#main-container{
+  margin-top: 20px;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 10px;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-} 
+
+

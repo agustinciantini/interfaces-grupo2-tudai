@@ -23,12 +23,16 @@ function buildGameList(category, files, quantity) {
 
   return files.slice(0, quantity).map(filename => {
     const title = filename.substring(0, filename.lastIndexOf(".")) || filename;
+    
+    const tags = ["nuevo", "popular", ""];
+    const randomTag = tags[Math.floor(Math.random() * tags.length)];
+
     return {
       title,
       image: `images/games/${category}/${filename}`,
-      // link: `gameplay.html?game=${title}`,
       link: '#',
-      category: [category]
+      category: [category],
+      tag: randomTag
     };
   });
 }
@@ -39,34 +43,67 @@ function initHome(container){
   // Flujo principal de Home.html
   Promise.all([loadTemplates(), loadGamesData()])
     .then(([_, gamesData]) => {
+      let allGames = [];
+      for (const category in gamesData) {
+        const gamesFromCategory = buildGameList(category, gamesData[category], gamesData[category].length);
+        allGames = allGames.concat(gamesFromCategory);
+      }
+
+      allGames.sort(() => Math.random() - 0.5);
+      const selectedGames = allGames.slice(0, 14);
+
+      const featuredGame = {
+        title: "Peg Solitaire",
+        image: `images/Peg-Solitaire-tematica-minecraft.png`, 
+        link: "#",
+        category: ""
+      };
+      selectedGames.splice(4, 0, featuredGame);
+
       // 🎯 featured
-            console.log("JUEGOS", gamesData);
-      const featuredGames = buildGameList("cars", gamesData["cars"], 32); // ejemplo: tomo 1 de action
-      console.log("AVERRR", featuredGames);
       const featuredCarousel = new_FeaturedCarousel({
-        games: featuredGames,
-        category: "cars",
+        games: selectedGames,
+        category: "",
         type: "featured",
-        quantity: 32
+        quantity: 14,
+        tag: ""
       });
       container.querySelector("#carouseles-container-1").prepend(featuredCarousel);
   
       // 🎯 populares
-      const popularesGames = buildGameList("adventure", gamesData["adventure"], 50);
+      allGames.sort(() => Math.random() - 0.5);
+      const selectedGamesPopular = allGames.slice(0, 15);
+
       const popularesCarousel = new_Carousel({
-        games: popularesGames,
-        category: "adventure",
-        quantity: 50
+        games: selectedGamesPopular,
+        category: "",
+        type: "",
+        quantity: 15,
+        tag: "popular"
       });
+
+      popularesCarousel.querySelectorAll(".tag-card-popular").forEach(card => {
+        card.classList.add("active");
+      });
+
       container.querySelector("#popular-carousele").appendChild(popularesCarousel);
   
       // 🎯 nuevos
-      const newGames = buildGameList("motorcycles", gamesData["motorcycles"], 15);
+      allGames.sort(() => Math.random() - 0.5);
+      const selectedGamesNew = allGames.slice(0, 15);
+
       const newCarousel = new_Carousel({
-        games: newGames,
-        category: "motorcycles",
-        quantity: 15
+        games: selectedGamesNew,
+        category: "",
+        type: "",
+        quantity: 15,
+        tag: "nuevo"
       });
+
+      newCarousel.querySelectorAll(".tag-card-new").forEach(card => {
+        card.classList.add("active");
+      });
+
       container.querySelector("#new-carousele").appendChild(newCarousel);
   
       // 🎯 Aventuras
@@ -86,9 +123,48 @@ function initHome(container){
         quantity: 32
       });
       container.querySelector("#action-carousele").appendChild(actionCarousel);
+
+      // // 🎯 Disparos
+      // const actionGames = buildGameList("action", gamesData["action"], 32);
+      // const actionCarousel = new_Carousel({
+      //   games: actionGames,
+      //   category: "action",
+      //   quantity: 32
+      // });
+      // container.querySelector("#action-carousele").appendChild(actionCarousel);
+
+
+
+
+
+      // ------------- Imagenes de "Lo mas preferido por la comunidad" ------------------
+      let allGamesComunity = [];
+      for (const category in gamesData) {
+        const gamesFromCategory = buildGameList(category, gamesData[category], gamesData[category].length);
+        allGamesComunity = allGamesComunity.concat(gamesFromCategory);
+      }
+
+      allGamesComunity.sort(() => Math.random() - 0.5);
+      const selectedGamesComunity = allGamesComunity.slice(0, 7);
+
+      renderMostLiked(container, selectedGamesComunity);
+
+
+      // Inserta las imágenes en el contenedor
+      function renderMostLiked(container, games) {
+        const grid = container.querySelector(".img-recommended-community");
+        if (!grid) return;
+        
+        grid.innerHTML = "";
+        
+        games.forEach(game => {
+          const img = document.createElement("img");
+          img.src = game.image;
+          img.alt = game.title;
+          grid.appendChild(img);
+        });
+      }
     });
-
-
 
 }
 

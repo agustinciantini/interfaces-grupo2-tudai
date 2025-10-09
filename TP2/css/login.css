@@ -1,6 +1,6 @@
 .login-container {
   font-family: 'Jandi', sans-serif;
-  color: #fff;
+  color: var(--grey-100);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,14 +47,14 @@ label {
   display: block;
   font-size: 0.9em;
   margin-bottom: 5px;
-  color: var(--primary-700);
+  color: var(--grey-100);
 }
 
 input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
   font-size: 1em;
-  color: #fff;
+  color: var(--grey-100);
   border-radius: 8px;
   border: 1px solid var(--grey-700);
   background: var(--primary-700);
@@ -95,7 +95,7 @@ input:focus {
 .remember-me input[type="checkbox"] {
   appearance: none;
   width: 18px; height: 18px;
-  border: 2px solid #fff;
+  border: 2px solid var(--grey-100);
   border-radius: 4px;
   background: transparent;
   cursor: pointer;
@@ -104,7 +104,7 @@ input:focus {
 }
 
 .remember-me input:checked {
-  background: #fff;
+  background: var(--grey-100)
 }
 
 .remember-me input:checked::after {
@@ -118,7 +118,7 @@ input:focus {
 
 .remember-me label {
   font-size: 0.9em;
-  color: #fff;
+  color: var(--grey-100);
   cursor: pointer;
 }
 
@@ -127,7 +127,7 @@ input:focus {
     padding: 10px 8px;
     font-size: 1.1em;
     font-weight: bold; 
-    color: #fff;
+    color: var(--grey-100);
     cursor: pointer;
     border: none;
     border-radius: 6px;
