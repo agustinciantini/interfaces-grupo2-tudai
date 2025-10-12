@@ -152,12 +152,17 @@
   color: var(--secondary-200);
   font-weight: bold;
   margin-bottom: 5px;
+
+  white-space: nowrap;        /* evita que salte de línea */
+  overflow: hidden;          
+  text-overflow: ellipsis;    /* muestra los "..." */
+  
 }
 .game-card:hover .game-info h3 {
   opacity: 1;
   border-radius: 10px;
 }
-        /* BOTONES CARRUSEL CATEGORIAS */
+        /* BOTONES de .carousel */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -186,7 +191,7 @@
   pointer-events: none !important;
 }
 .carousel-container:hover .carousel-btn {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* ---- GRUPOS Y TARJETAS FEATURED CAROUSELE---- */
@@ -202,8 +207,6 @@
   padding: 1.5px;
   align-items: center;
   transition: all 0.3s ease;
-   /* flex: 0 0 clamp(300px, 40vw, 490px);
-  height: clamp(250px, 30vw, 290px); */
 } 
 
 /* Mantiene proporciones uniformes entre los grupos de card (game-grid) y la game-card grande*/
@@ -211,8 +214,6 @@
 .carousel-track .game-card.large {
   flex: 0 0 clamp(300px, 40vw, 490px);
   height: clamp(250px, 30vw, 290px);
-  /* flex: 0 0 clamp(480px, 40vw, 490px);
-  height: clamp(280px, 30vw, 290px); */
 }
  
 .game-card {
@@ -230,6 +231,7 @@
   transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+
 /* Cuando está animando, usa una transición más rápida al inicio */
 .carousel-track.animating {
   transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -242,10 +244,16 @@
   gap: 10px;
   scroll-behavior: smooth;
   overflow: hidden;
+   overflow-x: auto;
   align-items: center;
   /* Transición suave para el efecto de scale */
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-x: auto; /*permite desplazarce en el eje x*/
+  scroll-snap-type:x mandatory; /*al deslizar, siempre se detendra en una imagen completa*/
+  scrollbar-width: none; /*oculta scrollbar en Firefox*/
 }
+
+.carousel::-webkit-scrollbar{ display: none; }
 
 /* Clase para animar el carrusel cuando se desplaza */
 .carousel.sliding {
@@ -298,7 +306,11 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
-
+ 
+@media (min-width:768px) {
+  
+  .carousel-container:hover .carousel-btn {
+    opacity: 1;
+  }
+  
+}
