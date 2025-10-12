@@ -9,7 +9,8 @@
 
 .carousel-container {
   position: relative;
-  width: 1520px; 
+  max-width: 1520px; 
+  /* max-width: 1550px; */
   height: 100%;
 }
 .categories-link {
@@ -83,32 +84,33 @@
   transform: scale(1.1);
 }
 
-.tag-card-new {
-  position: absolute;
-  display: none;
-  top: -6px;
-  left: -2.5px;
-  width: 45px;
-  height: 25px;
-  border-radius: 5px;
-  background: linear-gradient(to right, var(--primary-100) 0%, var(--primary-300) 100%);
+#popular-carousele {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
 }
 
-.tag-card-new.active {
-  display: block;
-}
-
+.tag-card-new, 
 .tag-card-popular {
   position: absolute;
   display: none;
   top: -6px;
   left: -2.5px;
-  width: 45px;
+  width: fit-content;
   height: 25px;
   border-radius: 5px;
+  padding: 2px;
+}
+
+.tag-card-new {
+  background: linear-gradient(to right, var(--primary-100) 0%, var(--primary-300) 100%);
+}
+
+.tag-card-popular {
   background: linear-gradient(to right, var(--accent-700) 0%, var(--red) 100%);
 }
 
+.tag-card-new.active,
 .tag-card-popular.active {
   display: block;
 }
