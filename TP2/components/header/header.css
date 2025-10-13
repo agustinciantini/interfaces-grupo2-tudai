@@ -278,7 +278,7 @@
         justify-content: space-between; 
         gap: 6px;
         padding: 10px 16px;
-        position: relative;
+        position: fixed;
     }
 
     .header-left {

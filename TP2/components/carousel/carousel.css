@@ -85,12 +85,6 @@
   transform: scale(1.1);
 }
 
-#popular-carousele {
- display: flex;
- flex-direction: column;
- gap: 10px;
-}
-
 .tag-card-new, 
 .tag-card-popular {
   position: absolute;
